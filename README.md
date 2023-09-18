@@ -1,5 +1,5 @@
 # LazyFood
 ## Descripción del problema
-El usuario necesita comer y comprar a diario lo cual influye en el gasto de tiempo y energia constante. Este cada día llega a casa después de trabajar sin ganas de pensar solo de hacer la comida y comer, además, desea minimizar lo máximo las veces que tiene que ir al supermercado.
+El usuario vive solo y no quiere gastar tiempo en decidir que cocinar e ir previamente al supermercado a comprar los productos necesarios cada vez que quiere comer. Asimismo, esto conlleva a la comida constante del mismo plato lo cual es aburrido y poco saludable.
 
 [Configuración de Git](Docs/ControlGitHub.png)
