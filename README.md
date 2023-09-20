@@ -1,5 +1,5 @@
-# LazyFood
+# CheapGas
 ## Descripción del problema
-El usuario vive solo y no quiere gastar tiempo en decidir que cocinar e ir previamente al supermercado a comprar los productos necesarios cada vez que quiere comer. Asimismo, esto conlleva a la comida constante del mismo plato lo cual es aburrido y poco saludable.
+El usuario, un estudiante, se acaba de independizar y su medio de transporte habitual y hobby es la moto. Sin embargo, con la subida de los carburantes se dedica a buscar las gasolineras más baratas suponiendo en un gasto de tiempo y esfuerzo.
 
 [Configuración de Git](Docs/ControlGitHub.png)
