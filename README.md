@@ -1,7 +1,5 @@
-# CheapGas
-## Descripción del problema
-El usuario, un estudiante, se acaba de independizar y su medio de transporte habitual y hobby es la moto. Sin embargo, con la subida de los carburantes se dedica a buscar las gasolineras más baratas suponiendo en un gasto de tiempo y esfuerzo. Además, el hecho de ir a una más barata a veces sale caro puesto que el trayecto hacia ellas acaba en un coste mayor (en tiempo y dinero).
-
-
+# GoodTransfer
+## Descipción del problema
+El usuario, un jugador de La Liga Fantasy, juega con sus amigos todos los años a este juego de móvil. Sin embargo, no está completamente absorbido por el mundo técnico del fútbol y siguiendo los 20 jugadores de los 20 equipos de EA La Liga. Esto le lleva a comprar simplemente guiándose en la puntuación global de los jugadores que salen a mercado así como en su valor de mercado.
 
 [Configuración de Git](Docs/ControlGitHub.png)
