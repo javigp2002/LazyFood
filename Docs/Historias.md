@@ -16,6 +16,3 @@ Antonio es un jugador de _La Liga Fantasy_ que quiere conocer la puntuación óp
 
 ## HU02: Juan quiere conocer la puntuación óptima de los futbolistas según sus posiciones
 Juan, además de buscar futbolistas óptimos para su equipo, quiere que estos futbolistas cumplan la formación básica (4-3-3, 4 defensas, 3 medios, 3 Delanteros y 1 portero), es decir, existe un límite de futbolistas posibles por la posición en las que estos juegan en la vida real.
-
-## HU03: Pedro quiere conocer los distintos equipos que se pueden formar
-Pedro busca encontrar distintas formaciones con los equipos óptimos en cada una de ellas para poder elegir la que más le guste y poder verlas todas seguidas.
