@@ -12,16 +12,20 @@ Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar s
 
 5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y, al ser del Girona, es poco conocido. Todo esto supone que valga poco pero sea muy rentable para el  usuario quiera comprarlo para su equipo.
 
+6. La venta de jugadores será siempre efectuada por el mercado de la liga de amigos que lo pujará por el valor de este.
 
+7. El precio del jugador se actualiza cada jornada según la cantidad de compras generales que se hayan realizado sobre el mismo.
 
 [Captura Fantasy 1](GerardMoreno.jpeg)
 [Captura Fantasy 2](DatosFantasy.jpeg)
 [Captura Fantasy 3](DatosFantasy2.jpeg)
 
-
-
-
 ## HU01
-Soy Antonio un jugador de _La Liga Fantasy_ que quiere saber jornada tras jornada salen al mercado la mayoría futbolistas o ya los tienen mis amigos. Sin embargo, solo compro aquellos que me suenan por nombre y no por su rendimiento actual. Por ello,  busco un equipo que, vendiendo el mio cada semana y comprando este, contendrá futbolistas de _La Liga EASports_ baratos pero muy útiles en cuanto a la puntuación que reflejan para poder ganar Liga de amigos.
+Antonio, un jugador de _La Liga Fantasy_, quiere saber cual es el futbolista de su equipo más rentable para vender de su plantilla.
+
+## HU02
+
+Federico, un jugador de _La Liga Fantasy_, quiere intercambiar algún futbolista de su plantilla por otro u otros más rentables.
+
 
 

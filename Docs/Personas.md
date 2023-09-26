@@ -1,6 +1,5 @@
 # Personas
 
-## Antonio
+## Antonio y Federico
 
-Es un jugador de la aplicación _La Liga Fantasy_ que entra cada día en esta
-
+Son unos jugadores de la aplicación _La Liga Fantasy_ que entran cada día en esta
