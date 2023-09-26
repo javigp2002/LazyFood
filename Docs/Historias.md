@@ -8,15 +8,11 @@ Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar s
 
 3. A los futbolistas se les da una puntuación al terminar el partido que se basa en su actuación y si han ganado, empatado o perdido el partido.
 
-4. Cada día sale al mercado de la liga de amigos 10 nuevos futbolistas que no pertenecen a ningún equipo de estos y se puja por ellos hasta el final del día.
+4. Cada día sale al mercado de la liga de amigos 30 nuevos futbolistas que no pertenecen a ningún equipo de estos y se puja por ellos hasta el final del día.
 
-5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y tiene un valor de mercado de 1 Millón es muy probable que su valor de mercado suba y por ello, el usuario quiera comprarlo para su equipo.
+5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y, al ser del Girona, es poco conocido. Todo esto supone que valga poco pero sea muy rentable para el  usuario quiera comprarlo para su equipo.
 
-6. La heurística es compleja teniendo en cuenta las jornadas anteriores para no comprar un "futbolista de una noche" así como: contra quien se va a enfrentar en la siguiente jornada, trayectoria su equipo real en _La Liga EASports_.
 
-7. Vender jugadores en un momento álgido de su valor también es necesario, es decir, el mismo jugador del Girona del que hemos hablado lleva 2 jornadas hacer nada pues será momento de venderlo y buscar uno nuevo. Además le habremos sacado rentabilidad.
-
-8. El usuario puede comprar jugadores de otros equipos de la liga de amigos pagando su clausula de rescisión.
 
 [Captura Fantasy 1](GerardMoreno.jpeg)
 [Captura Fantasy 2](DatosFantasy.jpeg)
@@ -25,11 +21,7 @@ Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar s
 
 
 
-## HU01: Antonio quiere conocer un equipo con buena previsión para la siguiente jornada con la puntuación óptima y su presupuesto base 
+## HU01
+Soy Antonio un jugador de _La Liga Fantasy_ que quiere saber jornada tras jornada salen al mercado la mayoría futbolistas o ya los tienen mis amigos. Sin embargo, solo compro aquellos que me suenan por nombre y no por su rendimiento actual. Por ello,  busco un equipo que, vendiendo el mio cada semana y comprando este, contendrá futbolistas de _La Liga EASports_ baratos pero muy útiles en cuanto a la puntuación que reflejan para poder ganar Liga de amigos.
 
-Antonio es un jugador de _La Liga Fantasy_ que quiere conocer un equipo para la siguiente jornada con la puntuación óptima de los futbolistas y con su presupuesto base de forma que pueda encontrarlos buenos y baratos para su equipo. Por ello, necesita un equipo con el nombre, puntuación y precio de los 11 futbolistas en las posiciones concretas y formación 433 (1 portero, 4 defensas, 3 medios, 3 delanteros) que, en principio, cumplirán la mejor relación puntuación-precio de la siguiente jornada para intentar: comprarlos si salen a mercado o saber si los tiene algún contrincante y pagar su cláusula.
 
-
-## HU02: Juan quiere saber si es momento de vender a un futbolista
-
-Juan no solo esta preocupado por la compra de jugadores sino también por no perder oportunidades porque coincide con que hay jugadores que son útiles varias jornadas y después desaparecen. Por ello, quiere obtener un listado de las 10 mejores posibles ventas de futbolistas por si necesita deshacerse de alguno de ellos.

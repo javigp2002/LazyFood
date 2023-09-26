@@ -1,10 +1,7 @@
 # Milestones
 ## [M0]: Modelo del problema
 
-Modelo con la descripción generada a través de los HUs. Este hito se cumplirá al identificar los datos necesarios sobre los jugadores, asi como, cuando quede un código que lo modularize y contemple las relaciones y restricciones.
+Modelo con la descripción generada a partir de los HUs. Este hito se cumplirá al identificar los datos necesarios, asi como, cuando quede un código que lo modularize y contemple las relaciones y restricciones.
 
-## [M1]: Creación del mejor equipo
-La información de los futbolistas con su valor de mercado y puntuación, correctamente actualizada. El hito se cumplirá cuando se consiga generar un equipo con 11 jugadores de futbol. Asimismo, la viabilidad del mismo se conseguirá cuando dicho equipo con restricción de posiciones que tenga la mayor proyección posible con un limite de presupuesto.
-
-## [M2]: Mejores ventas del mercado
-Diseño de un listado con los nombres de los futbolistas. El hito se cumplirá cuando se genere un listado de 10 nombres de futbolistas que se puedan vender con el mayor beneficio posible. Asimismo, la viabilidad del mismo se conseguirá cuando la heurística prevea que el valor de mercado de los futbolistas no va a subir en las siguientes jornadas.
+## [M1]
+La información disponible de los futbolistas será correctamente procesada y actualizada con su valor de mercado y actuación en las últimas jornadas. El hito estará cumplido cuando se genere un equipo con 11 futbolistas de _La Liga EASports_. Asimismo, la viabilidad de este se conseguirá cuando con el cómputo completo de los futbolistas consigamos crear dicho equipo con el mayor rendimiento posible en la actualidad acotado por el precio total de los 11.  
