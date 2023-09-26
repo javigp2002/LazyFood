@@ -8,7 +8,7 @@ Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar s
 
 3. A los futbolistas se les da una puntuación al terminar el partido que se basa en su actuación y si han ganado, empatado o perdido el partido.
 
-4. Cada día sale al mercado de la liga de amigos 30 nuevos futbolistas que no pertenecen a ningún equipo de estos y se puja por ellos hasta el final del día.
+4. Cada día sale al mercado de la liga de amigos 30 nuevos futbolistas que no pertenecen a ningún equipo de estos y se puja por ellos hasta el final del día. Lo que supone que cada jornada aparecerán casi todos los futbolistas menos los que tengan los demás de la liga de amigos.
 
 5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y, al ser del Girona, es poco conocido. Todo esto supone que valga poco pero sea muy rentable para el  usuario quiera comprarlo para su equipo.
 
