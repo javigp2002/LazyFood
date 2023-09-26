@@ -2,27 +2,30 @@
 ## User Journey
 Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar sus equipos. Esta aplicación externa funciona de la siguiente manera:
 
-1. Al registrarse el usuario recibe una plantilla de 11 futbolistas aleatoria con valor de 100 Millones y 100 Millones más para fichajes. Lo que genera un presupuesto base de 200 Millones entre los 2.
+1. Al registrarse el usuario recibe una plantilla de 11 futbolistas aleatoria con valor de 100 Millones y 100 Millones más para fichajes. Lo que genera un presupuesto base de 200 Millones entre los 2. Este equipo irá cambiando con la compra-venta de futbolistas del usuario.
 
-2. El usuario se encuentra en una "Liga de amigos" con otros contrincantes que tienen equipos distintos.
+2. El usuario puede tener suplentes, es decir, más de 11 jugadores en su equipo, pero solo 11 podrán puntuar en cada jornada.
 
-3. Estos futbolistas sumaran puntuaciones en función de su rendimiento en la vida real.
+3. Un futbolista solo puede estar en un equipo de la "Liga de amigos" a la vez.
 
-4. Cada día el mercado genera nuevos futbolistas para poder comprar según el dinero que se tenga, no se 
-haya gastado y no tengan sus contrincantes.
+4. El usuario se encuentra en una "Liga de amigos" con otros contrincantes que tienen equipos distintos.
 
-5. El usuario podrá comprar y vender futbolistas para mejorar su equipo.
+5. Estos futbolistas sumaran puntuaciones en función de su rendimiento en la vida real.
 
-6. El usuario podrá cambiar la formación de su equipo para mejorar su rendimiento.
+6. Cada día el mercado genera nuevos futbolistas para poder ser pujados, estos futbolistas de _La Liga EASports_ no pueden pertenecer a ningún equipo de la "Liga de amigos". Esta puja terminará a final del día y se dará el jugador.
 
-7. Un futbolista solo puede estar en un equipo de la "Liga de amigos" a la vez.
+7. El usuario podrá comprar o vender futbolistas para mejorar su equipo.
 
-8. El usuario puede realizar la compra de clausulas de otros futbolistas que tengan otros contrincantes 
+8. El precio de los futbolistas se determina en función de lo que "suele pagar la gente por ellos" en todas las ligas de amigos del juego, es decir, un jugador conocido valdrá más que uno desconocido aunque este haciendo menos puntos.
+
+9. El usuario podrá cambiar la formación de su equipo para mejorar su rendimiento.
+
+10. El usuario puede realizar la compra de clausulas de otros futbolistas que tengan otros contrincantes 
 para poder ficharlos.
 
-9. Cuantos más puntos generen sus futbolistas, más dinero ganará el usuario.
+11. Cuantos más puntos generen sus futbolistas, más dinero ganará el usuario para poder invertir en otros jugadores.
 
-10. El usuario puede tener suplentes, es decir, más de 11 jugadores en su equipo, pero solo 11 podrán puntuar en cada jornada.
+Por ello, ahora comprendido como se juega, el usuario que acceda a nuestra aplicación vendrá a conocer el mejor equipo de la jornada con el presupuesto base y será este el que decida si algún futbolista le convence para ficharlo en el otro juego.
 
 
 
