@@ -10,21 +10,18 @@ Esta aplicación pretende ayudar a los usuarios de _La Liga Fantasy_ a mejorar s
 
 4. Cada día sale al mercado de la liga de amigos 30 nuevos futbolistas que no pertenecen a ningún equipo de estos y se puja por ellos hasta el final del día. Lo que supone que cada jornada aparecerán casi todos los futbolistas menos los que tengan los demás de la liga de amigos.
 
-5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y, al ser del Girona, es poco conocido. Todo esto supone que valga poco pero sea muy rentable para el  usuario quiera comprarlo para su equipo.
+5. Si un futbolista no juega, no recibe puntuación. Por ello, hay que tener en cuenta las últimas jornadas los partidos en los que ha jugado, cuanto tiempo lo ha hecho, como ha jugado según las estadísticas y el valor de mercado que tiene asignado, es decir, si un jugador del Girona en las últimas 3 jornadas juega 90 minutos, hace 2 goles, genera ocasiones, pases... y, al ser del Girona, es poco conocido. Todo esto supone que valga poco pero sea muy rentable para el usuario quiera comprarlo para su equipo.
 
 6. La venta de jugadores será siempre efectuada por el mercado de la liga de amigos que lo pujará por el valor de este.
 
 7. El precio del jugador se actualiza cada jornada según la cantidad de compras generales que se hayan realizado sobre el mismo.
 
-[Captura Fantasy 1](GerardMoreno.jpeg)
-[Captura Fantasy 2](DatosFantasy.jpeg)
-[Captura Fantasy 3](DatosFantasy2.jpeg)
+8. La rentabilidad de un jugador viene dada por la bajos resultados que esté dando en las últimas jornadas, el jugador está comenzando a devaluarse y el partido siguiente sea más complicado (según la tabla de clasificación de la Liga).
 
 ## HU01
 Antonio, un jugador de _La Liga Fantasy_, quiere saber cual es el futbolista de su equipo más rentable para vender de su plantilla.
 
 ## HU02
-
 Federico, un jugador de _La Liga Fantasy_, quiere intercambiar algún futbolista de su plantilla por otro u otros más rentables.
 
 
