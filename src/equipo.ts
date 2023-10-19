@@ -5,10 +5,12 @@ class Equipo {
     private _jugadores: Jugador[];
     private _clasificacion: number;
     private _presupuesto: number;
+    private _partidos: Equipo[];
 
-    constructor(nombre: string, jugadores: Jugador[]){
+    constructor(nombre: string, jugadores: Jugador[], partidos: Equipo[]){
         this._nombre = nombre;
         this._jugadores = jugadores;
+        this._partidos = partidos;
     }
 
     getNombre(): string {
@@ -27,4 +29,7 @@ class Equipo {
         return this._presupuesto;
     }
 
+    getPartidos(): Equipo[] {
+        return this._partidos;
+    }
 }
