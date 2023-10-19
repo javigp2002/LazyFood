@@ -1,3 +1,4 @@
 proyecto:
   lenguaje: TypeScript
   version: 3.0.0
+  entidad: src/Equipo
