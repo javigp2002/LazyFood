@@ -13,20 +13,12 @@ export class Jugador {
         this.equipo_al_que_pertenece = equipo_al_que_pertenece;
     }
 
-    getNombre(): string {
-        return this._nombre;
-    }
-
     getPuntuacionPorJornada(): number[] {
         return this._puntuacionPorJornada;
     }
 
     getValorPorJornada(): number[] {
         return this._valor_por_jornada;
-    }
-
-    getEquipoAlQuePertenece(): equipoReal {
-        return this.equipo_al_que_pertenece;
     }
 
 }
