@@ -1,6 +1,6 @@
 export class equipoReal{
-    nombre:string;
-    puesto:number;
+    nombre: string;
+    puesto: number;
 
     constructor(nombre:string, puesto:number){
         this.nombre = nombre;
