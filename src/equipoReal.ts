@@ -21,7 +21,4 @@ export class equipoReal{
         return this.siguiente_rival;
     }
 
-    setSiguienteRival(siguiente_rival:equipoReal):void{
-        this.siguiente_rival = siguiente_rival;
-    }
 }
