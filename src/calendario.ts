@@ -1,17 +1,18 @@
+import { equipoReal } from "./equipoReal";
+
+type Enfrentamiento = {
+    equipo1: equipoReal,
+    equipo2: equipoReal,
+}
+
 export class Calendario{
-    private dia_actual: Date;
-    private calendario_semana_partidos: Array<Array<string>>;
+    jornadas: Map<Date, Enfrentamiento[]>;
 
-    constructor(dia_actual:Date, calendario_semana_partidos:Array<Array<string>>){
-        this.dia_actual = dia_actual;
-        this.calendario_semana_partidos = calendario_semana_partidos;
+    constructor(jornadas: Map<Date, Enfrentamiento[]>){
+        this.jornadas = jornadas;
     }
 
-    getDiaActual():Date{
-        return this.dia_actual;
-    }
-
-    getCalendarioSemanaPartidos():Array<Array<string>>{
-        return this.calendario_semana_partidos;
+    getJornadas(){
+        return this.jornadas;
     }
 }
