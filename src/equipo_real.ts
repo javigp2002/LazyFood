@@ -1,16 +1,8 @@
 export class equipoReal{
-    nombre: string;
-    puesto: number;
-    siguiente_rival: equipoReal;
-
-    constructor(nombre:string, puesto:number, siguiente_rival:equipoReal){
-        this.nombre = nombre;
-        this.puesto = puesto;
-        this.siguiente_rival = siguiente_rival;
-    }
-
-    getNombre():string{
-        return this.nombre;
+    constructor(
+        private nombre:string, 
+        private puesto:number, 
+        private siguiente_rival:equipoReal){
     }
 
     getPuesto():number{ 
