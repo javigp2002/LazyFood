@@ -1,4 +1,4 @@
-import { equipoReal } from "./equiporeal";
+import { equipoReal } from "./equipo_real";
 
 type Enfrentamiento = {
     equipo1: equipoReal,

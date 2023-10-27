@@ -1,4 +1,4 @@
-import { equipoReal } from "./equiporeal";
+import { equipoReal } from "./equipo_real";
 
 export class Jugador {
     private _nombre: string;
