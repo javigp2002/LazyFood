@@ -6,11 +6,9 @@ type Enfrentamiento = {
 }
 
 export class Calendario{
-    jornadas: Map<Date, Enfrentamiento[]>;
-
-    constructor(jornadas: Map<Date, Enfrentamiento[]>){
-        this.jornadas = jornadas;
-    }
+    constructor(
+        private jornadas: Map<Date, Enfrentamiento[]>)
+        {}
 
     getJornadas(){
         return this.jornadas;
