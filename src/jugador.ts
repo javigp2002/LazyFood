@@ -1,8 +1,6 @@
 import { equipoReal } from "./equipo_real";
 
 export class Jugador {
-
-
     constructor(
         private nombre: string, 
         private puntuacionPorJornada: number[], 
