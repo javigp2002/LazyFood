@@ -7,6 +7,19 @@ El usuario, un jugador de La Liga Fantasy, juega con sus amigos todos los años 
 - [Historias](Docs/Historias.md)
 - [Milestones](Docs/Milestones.md)
 
+## Objetivo 3
+### Clase Equipo
+
+Esta clase es la entidad encargada de que se gestione el equipo para poder reconocer los jugadores y los datos de los mismos para poder
+determinar más tarde una elección.
+
+### Comprobar sintaxis
+
+Para comprobar la sitnaxis de nuestra entidad se ejecutará:
+``` 
+deno task check
+```
+
 [Configuración de Git](Docs/ControlGitHub.png)
 
 [Runtime](Docs/runtime.md) |

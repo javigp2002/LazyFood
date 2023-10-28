@@ -1,4 +1,4 @@
-import { Jugador } from './jugador';
+import { Jugador } from './jugador.ts';
 
 export class Equipo {
     constructor(
