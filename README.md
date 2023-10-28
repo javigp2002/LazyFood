@@ -9,5 +9,6 @@ El usuario, un jugador de La Liga Fantasy, juega con sus amigos todos los años 
 
 [Configuración de Git](Docs/ControlGitHub.png)
 
-[Runtime](Docs/runtime.md)
-[Gestor de dependencias](Docs/gestor_dependencias.md)
+[Runtime](Docs/runtime.md) |
+[Gestor de dependencias](Docs/gestor_dependencias.md) | 
+[Gestor de tareas](Docs/gestor_tareas.md)
