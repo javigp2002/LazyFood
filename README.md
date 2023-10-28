@@ -8,3 +8,5 @@ El usuario, un jugador de La Liga Fantasy, juega con sus amigos todos los años 
 - [Milestones](Docs/Milestones.md)
 
 [Configuración de Git](Docs/ControlGitHub.png)
+
+[Runtime](Docs/runtime.md)
