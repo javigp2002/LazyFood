@@ -10,8 +10,8 @@ El usuario, un jugador de La Liga Fantasy, juega con sus amigos todos los años 
 ## Objetivo 3
 ### Clase Equipo
 
-Esta clase es la entidad encargada de que se gestione el equipo para poder reconocer los jugadores y los datos de los mismos para poder
-determinar más tarde una elección.
+Esta clase es la entidad encargada de que se gestione el equipo para poder reconocer 
+los jugadores y los datos de los mismos para poder determinar más tarde una elección.
 
 ### Comprobar sintaxis
 
