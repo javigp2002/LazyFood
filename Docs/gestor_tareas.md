@@ -22,10 +22,12 @@ está actualizada al día con nuestro runtime.
 ## Moon
 
 Hace 3 meses se anuncio la entrada de este task-runner como nueva herramienta para Deno el cual tiene una interfaz para poder realizar las tareas de una manera más sencilla e intuitiva, así como en su yml se establece el lenguaje y el tipo de proyecto que estamos creando. No obstante, esta está en fase experimental lo que lo hace un poco inestable con distintos bugs.
+[Enlace sobre el mismo](https://moonrepo.dev/moon)
 
 ## Quasar Tsk Runner (QTR)
 
 Herramienta flexible que deja escribir en Typescript utilizando deno. Está permite ejecutar tareas de la shell o usar las funcionalidades proias de deno. Por otro lado, se pueden compartir las tareas y las tareas con scripts tras proporcionar objetos de los archivos del sistema, sistema operativo, path… Se actualizó hace 4 semanas con su v0.0.8, es decír están activos realizando cambios en el mismo pero quizás sea una versión demasiado temprana que puede suponer muchos problemas.
+[Enlace sobre el mismo](https://deno.land/x/qtr@0.0.10)
 
 ## Elección
 

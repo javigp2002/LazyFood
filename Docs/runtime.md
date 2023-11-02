@@ -35,7 +35,7 @@ Implementado por Zig es también compatible con la mayoría de paquetes de Node.
 cualquiera de los dos anteriores con hasta el doble y triple de respuestas por segundo comparado con 
 Deno y Node.js, respectivamente. Además, al igual que Deno permite un todo-en-uno sin necesidad de un 
 gestor de dependencias externo. Sin embargo, aunque todo esto suena muy convincente, la realidad es 
-que se encuentra en Beta y no en producción lo que está resultando en bugs constantes por parte de los
+que se encuentra en su primera versión en producción lo que está resultando en bugs constantes por parte de los
 desarrolladores que lo implementan y, por tanto, un problema de seguridad en el mismo, aún así su 
 valoración en SNYK es de 95/100 con la última versión lanzada este mes, el 10/2023. 
 
