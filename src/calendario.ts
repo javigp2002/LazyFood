@@ -1,4 +1,4 @@
-import { equipoReal } from "./equipo_real";
+import { equipoReal } from "./equipo_real.ts";
 
 type Enfrentamiento = {
     equipo1: equipoReal,

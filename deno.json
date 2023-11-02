@@ -1,0 +1,16 @@
+{
+    "tasks": {
+        "check": "deno check --all src/equipo.ts"
+    },
+    
+    "lint": {
+        "include": [
+            "src/**/*.ts"
+        ],
+        "rules":{
+            "tags": ["recommended"],
+            "include": ["ban-untagged-todo"],
+            "exclude": ["no-unused-vars"]  
+        }
+    }
+}
