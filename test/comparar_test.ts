@@ -8,12 +8,14 @@ import { Calendario } from "../src/calendario.ts";
 import { beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
+    
     function eligeJugadorAlAzar(equipo: Equipo): Jugador {
         const jugadores = equipo.getJugadores();
         const indice = Math.floor(Math.random() * jugadores.length);
         return jugadores[indice];
     }
 
+    
     beforeAll(() => {
         const barcelona = new equipoReal("Barcelona", 3);
         const realMadrid = new equipoReal("Real Madrid", 2);
@@ -35,7 +37,7 @@ describe("M1 - Jugador de venta óptimo", () => {
         const equipo = new Equipo("Equipo", jugadores);
     });
 
-    
+
 
 });
 
