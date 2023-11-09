@@ -1,16 +1,11 @@
 {
     "tasks": {
-        "check": "deno check --all src/equipo.ts"
+        "check": "deno check --all src/equipo.ts",
+        "test": "deno test"
     },
-    
-    "lint": {
-        "include": [
-            "src/**/*.ts"
-        ],
-        "rules":{
-            "tags": ["recommended"],
-            "include": ["ban-untagged-todo"],
-            "exclude": ["no-unused-vars"]  
-        }
+
+    "imports":{
+        "bdd": "https://deno.land/std@0.204.0/testing/bdd.ts",
+        "mod": "https://deno.land/std@0.205.0/assert/mod.ts"
     }
 }

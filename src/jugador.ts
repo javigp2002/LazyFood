@@ -15,4 +15,6 @@ export class Jugador {
         return this.valor_por_jornada;
     }
 
+    
+
 }
