@@ -34,7 +34,19 @@ describe("M1 - Jugador de venta óptimo", () => {
             new Jugador("Darder", [5, 7, 4, 7], [14926769, 14754528,14595744,14382815], mallorca),
         ];
 
-        const equipo = new Equipo("Equipo", jugadores);
+        const equipo = new Equipo("EquipoComplejo", jugadores);
+
+        const jugadoresDistintaPuntuacion = [
+            new Jugador("Callejon", [10, 10, 10, 10], [ 10000000, 10000000, 10000000, 10000000], granada),
+            new Jugador("Uzuni", [5, 5, 5, 5], [10000000, 10000000,10000000,10000000], granada),
+        ];
+
+        const jugadoresDistintoPartidoSiguiente = [
+            new Jugador("Gavi", [1,1,1,1], [40000000, 40000000, 40000000, 40000000], barcelona),
+            new Jugador("Kroos", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid)
+        ];
+        const equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresDistintaPuntuacion);
+        const equipoDistintoPartidoSiguiente = new Equipo("equipoDistintoPartidoSiguiente", jugadoresDistintoPartidoSiguiente);
     });
 
 
