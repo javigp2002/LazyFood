@@ -24,6 +24,12 @@ Para comprobar la sitnaxis de nuestra entidad se ejecutará:
 deno task check
 ```
 
+### Ejecutar tests
+
+```
+deno task test
+```
+
 [Configuración de Git](Docs/ControlGitHub.png)
 
 [Runtime](Docs/runtime.md) |
