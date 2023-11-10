@@ -3,7 +3,7 @@ import { describe,it,beforeAll } from "bdd";
 import { assert } from "mod";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
-import { equipoReal } from "../src/equipo_real.ts";
+import { EquipoReal } from "../src/equipo_real.ts";
 import { Calendario } from "../src/calendario.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
@@ -26,10 +26,10 @@ describe("M1 - Jugador de venta óptimo", () => {
 
     
     beforeAll(() => {
-        const barcelona = new equipoReal("Barcelona", 3);
-        const realMadrid = new equipoReal("Real Madrid", 2);
-        const granada = new equipoReal("Granada", 19);
-        const mallorca = new equipoReal("Mallorca", 14);
+        const barcelona = new EquipoReal("Barcelona", 3);
+        const realMadrid = new EquipoReal("Real Madrid", 2);
+        const granada = new EquipoReal("Granada", 19);
+        const mallorca = new EquipoReal("Mallorca", 14);
 
         const calendario = new Calendario(new Map([
             [new Date("2021-01-01"), [{equipo1: barcelona, equipo2: realMadrid}]],
@@ -43,7 +43,7 @@ describe("M1 - Jugador de venta óptimo", () => {
             new Jugador("Darder", [5, 7, 4, 7], [14926769, 14754528,14595744,14382815], mallorca),
         ];
 
-        equipo = new Equipo("EquipoComplejo", jugadores);
+        equipo = new Equipo("EquipoComplejo", jugadores, calendario);
 
         const jugadoresDistintaPuntuacion = [
             new Jugador("Callejon", [10, 10, 10, 10], [ 10000000, 10000000, 10000000, 10000000], granada),
@@ -67,9 +67,9 @@ describe("M1 - Jugador de venta óptimo", () => {
 
         ];
 
-        equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresDistintaPuntuacion);
-        equipoDistintoPartidoSiguiente = new Equipo("equipoDistintoPartidoSiguiente", jugadoresDistintoPartidoSiguiente);
-        equipoDistintoPuntuacionYPartido = new Equipo("equipoDistintoPuntuacionYPartido", jugadoresDistintaPuntuacionYPartido);
+        equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresDistintaPuntuacion, calendario);
+        equipoDistintoPartidoSiguiente = new Equipo("equipoDistintoPartidoSiguiente", jugadoresDistintoPartidoSiguiente, calendario);
+        equipoDistintoPuntuacionYPartido = new Equipo("equipoDistintoPuntuacionYPartido", jugadoresDistintaPuntuacionYPartido, calendario);
     });
 
     it ("M1.1 - Es un jugador", () => {

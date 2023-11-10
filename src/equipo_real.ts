@@ -1,4 +1,4 @@
-export class equipoReal{
+export class EquipoReal{
     constructor(
         private nombre:string, 
         private puesto:number, 
