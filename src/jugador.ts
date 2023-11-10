@@ -15,6 +15,10 @@ export class Jugador {
         return this.valor_por_jornada;
     }
 
+    getEquipoAlQuePertenece(): EquipoReal{
+        return this.equipo_al_que_pertenece
+    }
+    
     getHeuristica(): number {
         let importancia_por_jornada: number[] = [0.4, 0.3, 0.25, 0.15]
         let importancia_por_valor: number[] = [0.35, 0.25, 0.25, 0.15]
