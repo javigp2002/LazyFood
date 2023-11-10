@@ -1,6 +1,5 @@
-
-import { describe,it,beforeAll } from "bdd";
-import { assert } from "mod";
+import { describe,it,beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
+import { assert } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
 import { EquipoReal } from "../src/equipo_real.ts";

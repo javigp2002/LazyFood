@@ -29,3 +29,5 @@ deno task check
 [Runtime](Docs/runtime.md) |
 [Gestor de dependencias](Docs/gestor_dependencias.md) | 
 [Gestor de tareas](Docs/gestor_tareas.md)
+
+[Elección herramientas de Test](Docs/eleccion_test.md)
