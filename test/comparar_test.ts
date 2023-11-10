@@ -98,6 +98,20 @@ describe("M1 - Jugador de venta óptimo", () => {
         assert(end - start < 1000);
     });
 
-    
+    it ("M1.6 - El jugador es el mejor a vender -> distinta puntuacion", () => {
+        const jugador = equipoDistintaPuntuacion.getJugadorOptimo();
+        assert(jugador === equipoDistintaPuntuacion.getJugadores()[0]);
+    });
+
+    it ("M1.7 - El jugador es el mejor a vender -> siguiente partido", () => {
+        const jugador = equipoDistintoPartidoSiguiente.getJugadorOptimo();
+        assert(jugador === equipoDistintoPartidoSiguiente.getJugadores()[1] ||
+            jugador === equipoDistintoPartidoSiguiente.getJugadores()[3]);
+    });
+
+    it ("M1.8 - El jugador es el mejor a vender -> distinta puntuacion y partido", () => {
+        const jugador = equipoDistintoPuntuacionYPartido.getJugadorOptimo();
+        assert(jugador === equipoDistintoPuntuacionYPartido.getJugadores()[3]);
+    });    
 });
 
