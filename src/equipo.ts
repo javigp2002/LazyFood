@@ -17,6 +17,12 @@ export class Equipo {
     }
 
     getJugadorOptimo(): Jugador {
+        let diferencia_dificultad_equipo: number = 0.1
+        
+
+
+        
+        
         return this.jugadores[0];
     }
 
