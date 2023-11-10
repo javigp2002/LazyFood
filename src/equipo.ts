@@ -14,4 +14,8 @@ export class Equipo {
         return this.jugadores;
     }
 
+    getJugadorOptimo(): Jugador {
+        return this.jugadores[0];
+    }
+
 }
