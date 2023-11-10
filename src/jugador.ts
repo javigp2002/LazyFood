@@ -17,7 +17,6 @@ export class Jugador {
 
     getHeuristica(): number {
         let importancia_por_jornada: Number[] = [0.4, 0.3, 0.25, 0.15]
-        let importancia_por_valor: Number[] = [0.35, 0.25, 0.25, 0.15]
         
         return 0;
     }
