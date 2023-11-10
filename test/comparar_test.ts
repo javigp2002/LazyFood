@@ -131,8 +131,8 @@ describe("M1 - Jugador de venta óptimo", () => {
     });    
 
     it ("M1.9 - El jugador es el mejor a vender: mayor valor en mercado", () => {
-        const jugador = equipo.getJugadorOptimo(date);
-        assert(jugador === equipoDistintoPuntuacionYPartido.getJugadores()[2]);
+        const jugador = equipoDistintoValorMercado.getJugadorOptimo(date);
+        assert(jugador === equipoDistintoValorMercado.getJugadores()[2]);
     
     });  
 });
