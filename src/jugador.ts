@@ -15,6 +15,12 @@ export class Jugador {
         return this.valor_por_jornada;
     }
 
+    getHeuristica(): number {
+        let importancia_por_jornada: Number[] = [0.15, 0.25, 0.3, 0.4]
+        
+        return 0;
+    }
+
     
 
 }
