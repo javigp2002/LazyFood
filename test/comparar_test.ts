@@ -12,6 +12,7 @@ describe("M1 - Jugador de venta óptimo", () => {
     let equipoDistintaPuntuacion: Equipo;
     let equipoDistintoPartidoSiguiente: Equipo;
     let equipoDistintoPuntuacionYPartido: Equipo;
+    let date: Date;
     
 
     function eligeJugadorAlAzar(equipo: Equipo): Jugador {
@@ -31,9 +32,10 @@ describe("M1 - Jugador de venta óptimo", () => {
         const granada = new EquipoReal("Granada", 19);
         const mallorca = new EquipoReal("Mallorca", 14);
 
+        date = new Date("2021-01-01");
+
         const calendario = new Calendario(new Map([
-            [new Date("2021-01-01"), [{equipo1: barcelona, equipo2: realMadrid}]],
-            [new Date("2021-01-02"), [{equipo1: granada, equipo2: mallorca}]],
+            [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
         ]));
 
         const jugadores = [
@@ -53,9 +55,9 @@ describe("M1 - Jugador de venta óptimo", () => {
 
         const jugadoresDistintoPartidoSiguiente = [
             new Jugador("Kroos", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
-            new Jugador("Gavi", [1,1,1,1], [40000000, 40000000, 40000000, 40000000], barcelona),
+            new Jugador("Gavi", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], barcelona),
             new Jugador("Modric", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
-            new Jugador("Pedri", [1,1,1,1], [40000000, 40000000, 40000000, 40000000], barcelona),
+            new Jugador("Pedri", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], barcelona),
 
         ];
 
@@ -64,7 +66,6 @@ describe("M1 - Jugador de venta óptimo", () => {
             new Jugador("Kroos", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
             new Jugador("Modric", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
             new Jugador("Pedri", [0,1,0,1], [40000000, 40000000, 40000000, 40000000], barcelona),
-
         ];
 
         equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresDistintaPuntuacion, calendario);
@@ -73,47 +74,47 @@ describe("M1 - Jugador de venta óptimo", () => {
     });
 
     it ("M1.1 - Es un jugador", () => {
-        assert(esJugador(equipo.getJugadorOptimo()));
+        assert(esJugador(equipo.getJugadorOptimo(date)));
     });
 
     it ("M1.2 - Es un jugador del equipo", () => {
-        const jugador = equipo.getJugadorOptimo();
+        const jugador = equipo.getJugadorOptimo(date);
         assert(equipo.getJugadores().includes(jugador));
     });
 
     it ("M1.3 - La puntuación del jugador devuelve un integer", () => {
-        const jugador = equipo.getJugadorOptimo();
+        const jugador = equipo.getJugadorOptimo(date);
         assert(Number.isInteger(jugador.getPuntuacionPorJornada()[0]));
     });
 
     it ("M1.4 - Valor de mercado del jugador es integer", () => {
-        const jugador = equipo.getJugadorOptimo();
+        const jugador = equipo.getJugadorOptimo(date);
         assert(Number.isInteger(jugador.getValorPorJornada()[0]));
     });
 
     it ("M1.5 - La función no tarda más de 1 segundo", () => {
         const start = performance.now();
-        equipo.getJugadorOptimo();
+        equipo.getJugadorOptimo(date);
         const end = performance.now();
         assert(end - start < 1000);
     });
 
 
     it ("M1.6 - El jugador es el mejor a vender: distinta puntuacion", () => {
-        const jugador = equipoDistintaPuntuacion.getJugadorOptimo();
+        const jugador = equipoDistintaPuntuacion.getJugadorOptimo(date);
         assert(jugador === equipoDistintaPuntuacion.getJugadores()[0]);
     
     });
 
     it ("M1.7 - El jugador es el mejor a vender: siguiente partido", () => {
-        const jugador = equipoDistintoPartidoSiguiente.getJugadorOptimo();
+        const jugador = equipoDistintoPartidoSiguiente.getJugadorOptimo(date);
         assert(jugador === equipoDistintoPartidoSiguiente.getJugadores()[1] ||
             jugador === equipoDistintoPartidoSiguiente.getJugadores()[3]);
     
         });
 
     it ("M1.8 - El jugador es el mejor a vender: distinta puntuacion y partido", () => {
-        const jugador = equipoDistintoPuntuacionYPartido.getJugadorOptimo();
+        const jugador = equipoDistintoPuntuacionYPartido.getJugadorOptimo(date);
         assert(jugador === equipoDistintoPuntuacionYPartido.getJugadores()[3]);
     
     });    

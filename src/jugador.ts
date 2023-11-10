@@ -20,8 +20,8 @@ export class Jugador {
     }
     
     getHeuristica(): number {
-        let importancia_por_jornada: number[] = [0.4, 0.3, 0.25, 0.15]
-        let importancia_por_valor: number[] = [0.35, 0.25, 0.25, 0.15]
+        const importancia_por_jornada: number[] = [0.4, 0.3, 0.25, 0.15]
+        const importancia_por_valor: number[] = [0.35, 0.25, 0.25, 0.15]
         
         const heuristica_puntuacion = -0.65;
         const heuristica_valor = 0.25;

@@ -17,23 +17,23 @@ export class Equipo {
     }
 
     getJugadorOptimo(fecha: Date): Jugador {
-        let diferencia_dificultad_equipo = 0.1;
         let jugadorOptimo: Jugador = this.jugadores[0];
         let maximoValorHeuristica = Number.MIN_VALUE;
 
         for (let i=0; i<this.jugadores.length; i++){
+            let diferencia_dificultad_equipo = 0.1;
             const jugadorActual = this.jugadores[i];
             let heuristicaActual = jugadorActual.getHeuristica();
 
-            if (this.calendario.getSiguienteEnfrentamientoEquipo(fecha, jugadorActual.getEquipoAlQuePertenece()).getPuesto() < 
+            if (this.calendario.getSiguienteEnfrentamientoEquipo(fecha, jugadorActual.getEquipoAlQuePertenece()).getPuesto() > 
             jugadorActual.getEquipoAlQuePertenece().getPuesto())
                 diferencia_dificultad_equipo = -0.1
-            
+
             heuristicaActual += diferencia_dificultad_equipo
 
             if (heuristicaActual>maximoValorHeuristica){
                 jugadorOptimo = jugadorActual;
-                maximoValorHeuristica = heuristicaActual;    
+                maximoValorHeuristica = heuristicaActual;
             }
         }
 
