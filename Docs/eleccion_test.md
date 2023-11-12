@@ -5,13 +5,21 @@ si el nuevo código ingresado es correcto y, sencillas, para poder terminar en u
 
 ## Metodología empleada
 
-La metodología empleada para los de tests será guiada por el principio FIRST y "la cantidad no equivale a calidad". Por ello, debemos tener:
+El mundo de los test es grande aunque se puede dividir entre hacer los tests antes que la lógica de negocio o después que la lógica de negocio, también conocidos como tests **FIRST** o **LAST**. Aunque crear los tests como última opción es bastante común no suele ser una buena práctica puesto que el desarrollador puede intentar ajustar los mismos para que su código los supere, perdiendo el propio sentido de los tests.
+
+Por ello, la metodología empleada para los de tests será guiada por el principio FIRST y "la cantidad no equivale a calidad". Por ello, debemos tener:
 
 - **Fast**: test rápidos (ayudándonos de las herramientas a elegir para los mismos). 
 - **Independent**: los tests deben ser independientes de los otros, es decir, no deben de ejecutarse en un orden para que funcione.
 
 - **Repeatable**: el resultado de las pruebas no tiene dependencias sobre el servidor, hora de ejecución, usuario... 
 - **Self-validating**: autoevaluables, oportunas (las pruebas se desarrollan antes del código).
+
+Dentro del ámbito encontramos dos fuertes metodologías el **TDD** (Test Driven Development) y **BDD** (Behavior Driven Development) que son metodologías complementarias con el objetivo de asegurar la calidad del software.
+- TDD: se enfoca en el mundo de las pruebas unitarias.
+- BDD: enfocado más al desarrollo empático con el usuario puesto que se realiza a través del diálogo entre los desarrolladores y el cliente facilitando la salida de un producto buscado por ambas partes y fruto de esta negociación.
+
+**BDD** será el perfecto enfoque para nuestro proyecto donde una salida de los tests más coloquial puede suponer un mejor entendimiento del porqué pasa o no los test que se han sido solicitados.
 
 ## Herramientas CLI
 
@@ -27,7 +35,7 @@ La elección del mismo vendrá determinada por la mantenibilidad que está tenie
 
 Es un framework para deno, aunque originalmente para [Manderine Framework](https://github.com/mandarineorg/mandarinets). Utiliza decoradores para declarar los tests, además tenemos que usar  `tsconfig.json`.
 
-### [Machiatto](https://github.com/drashland/rhum/)
+### [Machiatto](https://deno.land/x/machiatto@v0.1.3)
 
 Modulo creado para aparentar la interfaz de Mocha con soporte en tests asíncronos. Además, provee de agrupación de tests con los comandos `Describe` con sus `it`. Por otro lado, permite también escribir, ejecuciones [asincronas](https://docs.deno.com/runtime/manual/basics/testing/) debido al runtime, dado una agrupación de tests, que hacer antes y despues de cada test. Todos los tests se ejecutan de manera definida en la programación a no ser que se decida el estilo asíncrono.
 
@@ -38,7 +46,7 @@ La inserción del mismo en el código y los tests es simple y se pueden agrupar 
 
 ### Elección
 
-En realidad cualquiera de los 3 es óptimo para nuestro proyecto aportando fiabilidad y facilidad en los mismos. No obstante, Orange necesita usar de json para su configuración y, entre Machiatto y Bdd.ts, la elección es equivalente aunque el standard de Deno no permite asincronía en la ejecución por test. No obstante, la elección por defecto de deno permite también más facilidades a la hora de elegir las diferentes herramientas y la seguridad de las actualizaciones frecuentes del mismo. Por ello, prevalece la librería que ofrece sin terceros a Deno, es decir, `Bdd.ts`.
+En realidad cualquiera de los 3 es óptimo para nuestro proyecto aportando fiabilidad y facilidad en los mismos. No obstante, Orange necesita usar de json para su configuración y, entre Machiatto y Bdd.ts, la elección es equivalente aunque el standard de Deno no permite asincronía en la ejecución por test. No obstante, la elección por defecto de deno permite también más facilidades a la hora de elegir las diferentes herramientas y la seguridad de las actualizaciones frecuentes del mismo debido a que tanto Orange como Machiatto no se actualizan desde hace más de 2 años. Por ello, prevalece la librería que ofrece sin terceros a Deno, es decir, `Bdd.ts`.
 
 ## Libreria de aserciones
 
