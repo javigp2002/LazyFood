@@ -1,5 +1,5 @@
 import { describe,it,beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
-import { assert } from "https://deno.land/std@0.205.0/assert/mod.ts";
+import { assert, assertInstanceOf } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
 import { EquipoReal } from "../src/equipo_real.ts";
@@ -19,10 +19,6 @@ describe("M1 - Jugador de venta óptimo", () => {
         const jugadores = equipo.getJugadores();
         const indice = Math.floor(Math.random() * jugadores.length);
         return jugadores[indice];
-    }
-
-    function esJugador(jugador:Jugador): boolean {
-        return jugador instanceof Jugador;
     }
 
     
@@ -84,7 +80,7 @@ describe("M1 - Jugador de venta óptimo", () => {
     });
 
     it ("M1.1 - Es un jugador", () => {
-        assert(esJugador(equipo.getJugadorOptimo(date)));
+        assertInstanceOf(equipo.getJugadorOptimo(date), Jugador);
     });
 
     it ("M1.2 - Es un jugador del equipo", () => {
