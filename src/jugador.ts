@@ -7,6 +7,10 @@ export class Jugador {
         private valor_por_jornada: number[], 
         private equipo_al_que_pertenece: EquipoReal) {}
 
+    getNombre(): string {
+        return this.nombre;
+    }
+    
     getPuntuacionPorJornada(): number[] {
         return this.puntuacionPorJornada;
     }

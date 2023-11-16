@@ -6,57 +6,27 @@ import { EquipoReal } from "../src/equipo_real.ts";
 import { Calendario } from "../src/calendario.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
-    
     let equipoDistintaPuntuacion: Equipo;
-    let equipoDistintoPartidoSiguiente: Equipo;
-    let equipoDistintoPuntuacionYPartido: Equipo;
-    let equipoDistintoValorMercado: Equipo;
-    let date: Date;
+    
+    const barcelona = new EquipoReal("Barcelona", 3);
+    const realMadrid = new EquipoReal("Real Madrid", 2);
+    const granada = new EquipoReal("Granada", 19);
+    const mallorca = new EquipoReal("Mallorca", 14);
+
+    const date: Date = new Date("2021-01-01");;
+    const calendario: Calendario = new Calendario(new Map([
+        [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
+    ]));
 
     beforeAll(() => {
-        const barcelona = new EquipoReal("Barcelona", 3);
-        const realMadrid = new EquipoReal("Real Madrid", 2);
-        const granada = new EquipoReal("Granada", 19);
-        const mallorca = new EquipoReal("Mallorca", 14);
-
-        date = new Date("2021-01-01");
-
-        const calendario = new Calendario(new Map([
-            [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
-        ]));
-
-        const jugadoresDistintaPuntuacion = [
+        const jugadoresPruebaDatos = [
             new Jugador("Callejon", [10, 10, 10, 10], [ 10000000, 10000000, 10000000, 10000000], granada),
             new Jugador("Uzuni", [5, 5, 5, 5], [10000000, 10000000,10000000,10000000], granada),
-
         ];
 
-        const jugadoresDistintoPartidoSiguiente = [
-            new Jugador("Gavi", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], barcelona),
-            new Jugador("Modric", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
-            new Jugador("Pedri", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], barcelona),
-
-        ];
-
-        const jugadoresDistintaPuntuacionYPartido = [
-            new Jugador("Gavi", [1,1,1,1], [40000000, 40000000, 40000000, 40000000], barcelona),
-            new Jugador("Kroos", [1, 1, 1, 1], [40000000, 40000000, 40000000, 40000000], realMadrid),
-            new Jugador("Pedri", [0,1,0,1], [40000000, 40000000, 40000000, 40000000], barcelona),
-        ];
-
-        const jugadoresDistintosValoresMercado = [
-            new Jugador("Gavi", [1,1,1,1], [10000000, 10000000, 10000000, 10000000], barcelona),
-            new Jugador("Iniesta", [1, 1, 1, 1], [30000000, 30000000, 30000000, 30000000], barcelona),
-            new Jugador("Pedri", [1,1,1,1], [10000000, 10000000, 10000000, 10000000], barcelona),
-        ];
-
-
-        equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresDistintaPuntuacion, calendario);
-        equipoDistintoPartidoSiguiente = new Equipo("equipoDistintoPartidoSiguiente", jugadoresDistintoPartidoSiguiente, calendario);
-        equipoDistintoPuntuacionYPartido = new Equipo("equipoDistintoPuntuacionYPartido", jugadoresDistintaPuntuacionYPartido, calendario);
-        equipoDistintoValorMercado = new Equipo("equipoDistintoValorMercado", jugadoresDistintosValoresMercado, calendario);
-
+        equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresPruebaDatos, calendario);
     });
+
 
     it ("M1.1 - Es un jugador", () => {
         assertInstanceOf(equipoDistintaPuntuacion.getJugadorOptimo(date), Jugador);
@@ -84,30 +54,28 @@ describe("M1 - Jugador de venta óptimo", () => {
         assert(end - start < 1000);
     });
 
+    JSON.parse(Deno.readTextFileSync("./test/datos_test.json")).forEach((equipoPruebaData: any) => {
+        const jugadores: Jugador[] = [];
 
-    it ("M1.6 - El jugador es el mejor a vender: distinta puntuacion", () => {
-        const jugador = equipoDistintaPuntuacion.getJugadorOptimo(date);
-        assert(jugador === equipoDistintaPuntuacion.getJugadores()[0]);
-    
-    });
+        equipoPruebaData.jugadores.forEach((jugador: any) => {
+            const puntuaciones:number[] = jugador.puntuacionPorJornada;
+            const valor:number[] = jugador.valor_por_jornada;
+            const equipo:EquipoReal = new EquipoReal(jugador.equipo_al_que_pertenece.nombre, jugador.equipo_al_que_pertenece.puesto);
 
-    it ("M1.7 - El jugador es el mejor a vender: siguiente partido", () => {
-        const jugador = equipoDistintoPartidoSiguiente.getJugadorOptimo(date);
-        assert(jugador === equipoDistintoPartidoSiguiente.getJugadores()[0] ||
-            jugador === equipoDistintoPartidoSiguiente.getJugadores()[2]);
-    
+            jugadores.push(new Jugador(jugador.nombre, puntuaciones, valor, equipo));
+        });
+        const equipoPrueba = new Equipo (equipoPruebaData.nombre, jugadores, calendario)
+        const indexJugadorOptimo: number[] = []
+
+        equipoPruebaData.jugadores_optimos_nombre.forEach((jugadorOptimo: string) => {
+            indexJugadorOptimo.push(jugadores.findIndex((jugador: Jugador) => jugador.getNombre() === jugadorOptimo));
         });
 
-    it ("M1.8 - El jugador es el mejor a vender: distinta puntuacion y partido", () => {
-        const jugador = equipoDistintoPuntuacionYPartido.getJugadorOptimo(date);
-        assert(jugador === equipoDistintoPuntuacionYPartido.getJugadores()[2]);
-    
-    });    
 
-    it ("M1.9 - El jugador es el mejor a vender: mayor valor en mercado", () => {
-        const jugador = equipoDistintoValorMercado.getJugadorOptimo(date);
-        assert(jugador === equipoDistintoValorMercado.getJugadores()[1]);
-    
-    });  
+        it (`M1.- Es un jugador óptimo en: ${equipoPruebaData.titulo}`,  () => {
+            assert(indexJugadorOptimo.includes(equipoPrueba.getJugadores().indexOf(equipoPrueba.getJugadorOptimo(date))));
+        });
+
+    });
 });
 

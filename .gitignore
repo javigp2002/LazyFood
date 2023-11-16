@@ -131,3 +131,6 @@ dist
 
 # VisualStudio Code
 .vscode
+
+# Jetbrains
+.idea
