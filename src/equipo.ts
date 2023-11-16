@@ -8,10 +8,6 @@ export class Equipo {
         private calendario: Calendario)
     {}
 
-    getNombre(): string {
-        return this.nombre;
-    }
-
     getJugadores(): Jugador[] {
         return this.jugadores;
     }
@@ -19,15 +15,18 @@ export class Equipo {
     getJugadorOptimo(fecha: Date): Jugador {
         let jugadorOptimo: Jugador = this.jugadores[0];
         let maximoValorHeuristica = Number.MIN_VALUE;
+        const valor_diferencia_equipo_positiva = 0.1;
+        const valor_diferencia_equipo_negativa = -0.1;
+
 
         for (let i=0; i<this.jugadores.length; i++){
-            let diferencia_dificultad_equipo = 0.1;
+            let diferencia_dificultad_equipo = valor_diferencia_equipo_positiva;
             const jugadorActual = this.jugadores[i];
             let heuristicaActual = jugadorActual.getHeuristica();
 
             if (this.calendario.getSiguienteEnfrentamientoEquipo(fecha, jugadorActual.getEquipoAlQuePertenece()).getPuesto() > 
             jugadorActual.getEquipoAlQuePertenece().getPuesto())
-                diferencia_dificultad_equipo = -0.1
+                diferencia_dificultad_equipo = valor_diferencia_equipo_negativa
 
             heuristicaActual += diferencia_dificultad_equipo
 

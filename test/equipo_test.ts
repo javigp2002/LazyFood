@@ -7,21 +7,12 @@ import { Calendario } from "../src/calendario.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
     
-    let equipo: Equipo;
     let equipoDistintaPuntuacion: Equipo;
     let equipoDistintoPartidoSiguiente: Equipo;
     let equipoDistintoPuntuacionYPartido: Equipo;
     let equipoDistintoValorMercado: Equipo;
     let date: Date;
-    
 
-    function eligeJugadorAlAzar(equipo: Equipo): Jugador {
-        const jugadores = equipo.getJugadores();
-        const indice = Math.floor(Math.random() * jugadores.length);
-        return jugadores[indice];
-    }
-
-    
     beforeAll(() => {
         const barcelona = new EquipoReal("Barcelona", 3);
         const realMadrid = new EquipoReal("Real Madrid", 2);
