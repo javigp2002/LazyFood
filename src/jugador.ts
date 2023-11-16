@@ -36,11 +36,13 @@ export class Jugador {
     }
 
     mediaValor(importancia_por_valor: number[]): number {
-        let media = 0;    
+        let media = 0;   
         const diferencia_por_valor_mercado = 7500000
-        for (let i=0; i<this.getValorPorJornada().length; i++)
-            media += this.valor_por_jornada[i]/diferencia_por_valor_mercado * importancia_por_valor[i];
-
+        
+        this.valor_por_jornada.forEach(function(valor, index){
+            media += valor/diferencia_por_valor_mercado * importancia_por_valor[index]
+        }); 
+        
         return media;
     }
   
