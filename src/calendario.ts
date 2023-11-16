@@ -16,7 +16,7 @@ export class Calendario{
 
     public getSiguienteEnfrentamientoEquipo(fecha: Date, equipoReal: EquipoReal): EquipoReal{
         let siguienteEnfrentamientoEquipoReal: EquipoReal = new EquipoReal("NULL", 21);
-        for (let [key,value] of this.jornadas.entries()){
+        for (const [key,value] of this.jornadas.entries()){
             if (key == fecha){
                 for (let i=0; i<value.length; i++){
                     if (value[i].equipo1 == equipoReal){
