@@ -3,3 +3,4 @@ entidad: src/equipo.ts
 automatizar:
   fichero: deno.json
   orden: deno task
+test: test/equipo_test.ts

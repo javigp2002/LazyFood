@@ -1,0 +1,242 @@
+[
+    {
+        "titulo": "Equipo con distinta puntuación",
+        "nombre": "Equipo2",
+        "jugadores": [
+            {
+                "nombre": "Callejon",
+                "puntuacionPorJornada": [
+                    10,
+                    10,
+                    10,
+                    10
+                ],
+                "valor_por_jornada": [
+                    10000000,
+                    10000000,
+                    10000000,
+                    10000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            },
+            {
+                "nombre": "Uzuni",
+                "puntuacionPorJornada": [
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "valor_por_jornada": [
+                    10000000,
+                    10000000,
+                    10000000,
+                    10000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            }
+        ],
+        "jugadores_optimos_nombre": ["Callejon"]
+    },
+    {
+        "titulo": "Equipo con distinto partido siguiente",
+        "nombre": "equipo1",
+        "jugadores": [
+            {
+                "nombre": "Gavi",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            },
+            {
+                "nombre": "Modric",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "realMadrid",
+                    "puesto": 2
+                }
+            },
+            {
+                "nombre": "Pedri",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            }
+        ],
+        "jugadores_optimos_nombre": ["Gavi", "Pedri"]
+    },
+    {
+        "titulo": "Equipo con distinta puntuación y partido siguiente",
+        "nombre": "equipo3",
+        "jugadores": [
+            {
+                "nombre": "Gavi",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            },
+            {
+                "nombre": "Modric",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "realMadrid",
+                    "puesto": 2
+                }
+            },
+            {
+                "nombre": "Pedri",
+                "puntuacionPorJornada": [
+                    0,
+                    1,
+                    0,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            }
+        ],
+        "jugadores_optimos_nombre": ["Pedri"]
+    },
+    {
+        "titulo": "Equipo con distinto valor de mercado",
+        "nombre": "equipo4",
+        "jugadores": [
+            {
+                "nombre": "Gavi",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    10000000,
+                    10000000,
+                    10000000,
+                    10000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            },
+            {
+                "nombre": "Iniesta",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    40000000,
+                    40000000,
+                    40000000,
+                    40000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            },
+            {
+                "nombre": "Pedri",
+                "puntuacionPorJornada": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "valor_por_jornada": [
+                    10000000,
+                    10000000,
+                    10000000,
+                    10000000
+                ],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            }
+        ],
+        "jugadores_optimos_nombre": ["Iniesta"]
+    }
+    
+]
+
+
