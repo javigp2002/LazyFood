@@ -31,11 +31,8 @@ export class Jugador {
     }
 
     mediaPuntuacion(importancia_por_jornada: number[]): number {
-        let media = 0;    
-        for (let i=0; i<this.getPuntuacionPorJornada().length; i++)
-            media += this.puntuacionPorJornada[i] * importancia_por_jornada[i];
-
-        return media;
+        return this.getPuntuacionPorJornada().reduce(function(media, puntuación,
+            index){return media + puntuación * importancia_por_jornada[index]}, 0);
     }
 
     mediaValor(importancia_por_valor: number[]): number {
