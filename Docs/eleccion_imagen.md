@@ -8,7 +8,7 @@ Siguiendo las buenas prácticas realizadas hasta ahora lo primero es seleccionar
 
 - La imagen ha de ser segura, es decir, debe ser actualizada con frecuencia y a través de un equipo conocido o que sea verificado
 
-- **Rapidez**: la imagen ha de ser rápida más rápida que las demás.
+- **Rapidez**: cada imagen puede tener alguna dependencia que pueda retrasar la ejecución del programa por tanto, buscamos, en las distintas imagenes que se encuentren, la que realice los tests en menos tiempo.
 
 - Por seguridad, además, debe solo poder incluir las herramientas necesarias para el proyecto
 
