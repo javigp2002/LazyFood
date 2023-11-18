@@ -30,6 +30,21 @@ deno task check
 deno task test
 ```
 
+## Objetivo 5
+
+### Contenedor de pruebas
+
+Para constuir la imagen y ejecutar el contenedor se ejecutará el siguiente comando:
+```
+docker build -t javigp2002/lazyfood . && docker run -tv `pwd`:/app/test javigp2002/lazyfood
+```
+
+Para ejecutar la imagen también podemos utilizar la que se encuentra en el repositorio de [Lazy Food](https://hub.docker.com/repository/docker/javigp2002/lazyfood/general)
+
+
+```
+docker run -tv `pwd`:/app/test javigp2002/lazyfood
+```
 [Configuración de Git](Docs/ControlGitHub.png)
 
 [Runtime](Docs/runtime.md) |
@@ -37,3 +52,5 @@ deno task test
 [Gestor de tareas](Docs/gestor_tareas.md)
 
 [Elección herramientas de Test](Docs/eleccion_test.md)
+
+[Elección de contenedor de pruebas](Docs/eleccion_imagen.md)
