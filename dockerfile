@@ -12,4 +12,4 @@ USER deno
 
 RUN deno cache --lock=deno.lock --reload --lock-write deno.json
 
-ENTRYPOINT [ "deno", "task", "test", "test/equipo_test.ts" ]
+ENTRYPOINT [ "deno", "task", "test"]
