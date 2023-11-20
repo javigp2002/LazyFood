@@ -10,6 +10,6 @@ RUN chown -R deno:deno /app
 
 USER deno
 
-RUN deno cache --lock=deno.lock --reload --lock-write deno.json
+RUN deno cache --lock=deno.lock --lock-write deno.json
 
 ENTRYPOINT [ "deno", "task", "test"]
