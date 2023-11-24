@@ -1,6 +1,6 @@
 # Sistemas de Integración Continua 
 
-Sones una herramienta de software que centraliza todas las operaciones de integración continua y proporciona una plataforma fiable y estable para poder crear sus proyectos.
+Son una herramienta de software que centraliza todas las operaciones de integración continua y proporciona una plataforma fiable y estable para poder crear sus proyectos.
 
 ## Criterios 
 
