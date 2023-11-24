@@ -1,5 +1,5 @@
 trigger:
-- objetivo-6
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -8,9 +8,13 @@ steps:
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
-  displayName: 'Install Docker'
+    releaseType: 'stable'
+
+- script: docker pull javigp2002/lazyfood:latest
+  displayName: 'Pull Docker image'
+
+- checkout: self
 
 - script: |
-    docker pull javigp2002/lazyfood:latest
     docker run javigp2002/lazyfood:latest deno task test
-  displayName: 'Run Deno task'
+  displayName: 'Run tests'
