@@ -1,0 +1,28 @@
+trigger:
+  branches:
+    include:
+      - objetivo-6
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: BuildAndTest
+  displayName: 'Build and Test'
+  container:
+    image: javigp2002/lazyfood:latest
+
+  steps:
+  - checkout: self
+
+  - script: |
+      deno task test
+    displayName: 'Run Deno tests'
+
+  - task: Docker@2
+    displayName: 'Build and push Docker image'
+    inputs:
+      command: 'buildAndPush'
+      containerRegistry: 'your_container_registry'
+      repository: 'your_repository'
+      tags: 'latest'
