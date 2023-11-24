@@ -13,3 +13,5 @@ Vamos a introducir el CI de Github obligatoriamente y, además, incluiremos otro
 - **Gratuito**: debe ser gratuito para proyectos públicos.
 
 - **Trabajar con Docker**: permite trabajar con docker.
+
+- **Trabajar con Deno**: permite trabajar con deno y typescript.
