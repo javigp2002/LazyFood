@@ -1,0 +1,17 @@
+trigger:
+  branches:
+    include:
+      - objetivo-6
+      
+jobs:
+- job: BuildAndTest
+  displayName: 'Build and Test'
+  container:
+    image: javigp2002/lazyfood:latest
+
+  steps:
+  - checkout: self
+
+  - script: |
+      deno task test
+    displayName: 'Run Deno tests'
