@@ -25,7 +25,7 @@ Además contiene fácil integración y la úlltima actualización fue en noviemb
 
 ### Azure Pipeline
 
-Tras varios intentos con la prueba gratuita de Azure DevOps no ha sido fácil la integración con Deno, por tanto, lo eliminamos como opción. Azure DevOps permite una maner de hacer pipelines pero no se especifica fácilmente en la documentación sobre como ejecutar tests de una imagen. Se puede comprobar en los pull request generados el intento de hacer el mismo.
+Tras varios intentos con la prueba gratuita de Azure DevOps no ha sido fácil la integración con Deno, por tanto, lo eliminamos como opción. Azure DevOps permite una maner de hacer pipelines pero no se especifica fácilmente en la documentación sobre como ejecutar tests de una imagen. Se puede comprobar en los pull request generados el intento de hacer el mismo. Asimismo, al ejecutar el test pedía un informe para poder realizar testeos en paralelo...
 
 ### Amazon Web Services
 
@@ -37,7 +37,7 @@ Permite una instalación sobre el repositorio de github de una manera sencilla y
 
 ### Semaphore Ci
 
-Emplea checks API y permite trabajar con docker, sin embargo, no se puede instalar gratuitamente con Github.
+No emplea checks API sino statuses y permite trabajar con docker, sin embargo, no se puede instalar gratuitamente con Github.
 
 
 ### Elección
