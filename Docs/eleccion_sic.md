@@ -18,26 +18,26 @@ Vamos a introducir el CI de Github obligatoriamente y, además, incluiremos otro
 
 ## Elección
 
-### Circle CI
-Permite fácil integración entre GitHub, Deno, docker y es gratuito
+### [Circle CI](https://circleci.com/)
+Permite fácil integración entre **GitHub**, existen tutoriales para poder trabajar y construir pipelines sobre proyectos **Deno**, se puede ejecutar imagenes **docker** para iniciar un contenedor y es **gratuito**
 
-Además contiene fácil integración y la úlltima actualización fue en noviembre de 2023.
+Además contiene fácil integración y la úlltima actualización fue en **noviembre de 2023**.
 
-### Azure Pipeline
+### [Azure Pipeline](https://azure.microsoft.com/es-es/products/devops)
 
-Tras varios intentos con la prueba gratuita de Azure DevOps no ha sido fácil la integración con Deno, por tanto, lo eliminamos como opción. Azure DevOps permite una maner de hacer pipelines pero no se especifica fácilmente en la documentación sobre como ejecutar tests de una imagen. Se puede comprobar en los pull request generados el intento de hacer el mismo. Asimismo, al ejecutar el test pedía un informe para poder realizar testeos en paralelo...
+Tras varios intentos con la **prueba gratuita** de Azure DevOps no ha sido fácil la integración con **Deno**, por tanto, lo eliminamos como opción. Azure DevOps permite una manera de hacer pipelines pero no se especifica fácilmente en la documentación sobre como ejecutar tests de una **imagen**. Se puede comprobar en los pull request generados el intento de hacer el mismo. Asimismo, al ejecutar el test pedía realizar un *formulario  para poder realizar testeos en paralelo* que responderían de 1-3 días laborables...
 
-### Amazon Web Services
+### [Amazon Web Services](https://aws.amazon.com/es/codepipeline/)
 
-No permite tampoco una versió gratuita de prueba para estudiantes lo que lo inhabilita tras pedir obligatoriamente la tarjeta de cŕedito.
+Tiene una **versión gratuita** sin embargo, esta permite un número limitado de peticiones al pipeline hasta que llegue el cobro, sin embargo, cuando te estas creando la cuenta pide una tarjeta de crédito para ejecutar dichas transacciones llegado el momento lo que no me transmitía ninguna seguridad. Por ello, podríamos decir que **es de pago**.
 
-### Cirrus Ci
+### [Cirrus Ci](https://cirrus-ci.org/)
 
-Permite una instalación sobre el repositorio de github de una manera sencilla y la creacion de .cirrus.yml así como un código fácil y una interfaz sencilla y se puede utilizar sobre Github
+Permite una instalación sobre el repositorio de github de una manera sencilla y la creacion de .cirrus.yml así como un código fácil y una interfaz sencilla y se puede utilizar sobre **Github**. Además para permite un entorno de ejecucción de imagenes **docker** y ofrece soporte con problemas o errores en aquellas que sean remotas. Por tanto, esto lleva a poder ejecutar **deno** sin problemas. La última actualización de su documentación fue en **julio de 2023**
 
-### Semaphore Ci
+### [Semaphore Ci](https://semaphoreci.com/)
 
-No emplea checks API sino statuses y permite trabajar con docker, sin embargo, no se puede instalar gratuitamente con Github.
+No emplea checks API sino statuses y permite trabajar con docker, sin embargo, no se puede instalar gratuitamente con Github. Por lo que ya no puede ser una opción a elegir
 
 
 ### Elección
