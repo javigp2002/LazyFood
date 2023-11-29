@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: javigp2002/lazyfood:latest
+    steps:
+      - checkout
+      - run: |
+          deno task test
+
+workflows:
+  sample:
+    jobs:
+      - build-and-test
