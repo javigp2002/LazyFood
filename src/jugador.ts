@@ -1,3 +1,4 @@
+import { Logger } from "../logger/logger.ts";
 import { EquipoReal } from "./equipo_real.ts";
 
 export class Jugador {
@@ -5,7 +6,10 @@ export class Jugador {
         private nombre: string, 
         private puntuacionPorJornada: number[], 
         private valor_por_jornada: number[], 
-        private equipo_al_que_pertenece: EquipoReal) {}
+        private equipo_al_que_pertenece: EquipoReal) {
+            const logger = Logger.instance().getLogger();
+            logger.info("Creando jugador " + nombre);
+        }
 
     getNombre(): string {
         return this.nombre;
@@ -30,6 +34,8 @@ export class Jugador {
         const heuristica_puntuacion = -0.65;
         const heuristica_valor = 0.25;
         
+        const logger = Logger.instance().getLogger();
+        logger.debug("Calculando heuristica para el jugador " + this.nombre);
         return this.mediaPuntuacion(importancia_por_jornada) * heuristica_puntuacion +
                 this.mediaValor(importancia_por_valor) * heuristica_valor;
     }
