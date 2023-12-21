@@ -134,3 +134,6 @@ dist
 
 # Jetbrains
 .idea
+
+# Objetivo 7
+.env
