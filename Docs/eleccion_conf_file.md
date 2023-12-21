@@ -6,6 +6,8 @@ Deno, por defecto, soporta los archivos de configuración con archivos `.json` s
 
 - Tenemos que tener un archivo de configuración que nos permita obtener tanto los .json como los .env
 
+- Posibilidad de manejo de varíos archivos
+
 - Que se haya trabajado en este repositorio en los últimos meses, es decir, que esté actualizado
 
 ## Opciones
@@ -28,5 +30,5 @@ Módulo bastante completo que permite trabajar con muchisimos tipos de extension
 
 ## Elección
 
-Finalmente, la mejor opcioón es crear nuestro propio archivo de configuración ayudandonos de node-config para poder crear una instancia completa que utilice nuestro programa y lea las variables de `.config/default.json`.
+Finalmente, la mejor opción es crear nuestro propio archivo de configuración ayudandonos de node-config para poder crear una instancia completa que utilice nuestro programa y lea las variables de `.config/default.json`. Esta configuración solo permitirá modificar json pero, si en algún momento necesitamos o queremos añadir otro fichero, al crear nuestra propia clase podremos añadirlo fácilmente
 
