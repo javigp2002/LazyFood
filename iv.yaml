@@ -8,3 +8,6 @@ test: test/equipo_test.ts
 CI:
   - .github/workflows/deno.yml
   - .circleci/config.yml
+
+configuracion:
+  - config/config.ts
