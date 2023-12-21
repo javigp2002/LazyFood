@@ -16,9 +16,13 @@ export class MyConfig {
         return MyConfig._config;
     }
 
-    get(key: string){
-        return this._config.get(key);
+    getLoggerHandler(){
+        return this._config.get("logger.default.handler");
     }
 
-     
+    getLoggerLevel(){
+        return this._config.get("logger.default.level");
+    }
+
+    
 }

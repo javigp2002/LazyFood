@@ -29,7 +29,7 @@ describe("M1 - Jugador de venta óptimo", () => {
         equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresPruebaDatos, calendario);
         
         const logger = Logger.instance();
-        const level_logger = MyConfig.instance().get("logger.default.level");
+        const level_logger = MyConfig.instance().getLoggerLevel();
     });
 
 

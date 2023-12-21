@@ -13,8 +13,8 @@ export class Logger {
         },
         loggers: {
           default: {
-            level: MyConfig.instance().get("logger.default.level"),
-            handlers: [MyConfig.instance().get("logger.default.handler")],
+            level: MyConfig.instance().getLoggerLevel(),
+            handlers: [MyConfig.instance().getLoggerHandler()],
           },
         },
       });
