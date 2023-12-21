@@ -16,7 +16,7 @@ Esta opcion valida, siempre que lo realicemos así, los criterios. Sin embargo, 
 
 ### (Deno config)[https://deno.land/x/deno_config@v0.1.2]
 
-Está más orientado al mantenimiento a través de "streamline"  la aplicación de deno a traves de cli, .env y archivos json. Sin embargo, la última versión se realizó hace 2 años
+Está más orientado al mantenimiento de forma directa sobre la aplicación de deno a traves de cli, .env y archivos json. Sin embargo, la última versión se realizó hace 2 años
 
 ### (Config)[https://deno.land/x/config@v1.3.0]
 
