@@ -1,5 +1,6 @@
 import * as log from "https://deno.land/std@0.209.0/log/mod.ts";
 import { MemoryHandler } from "./memory_handler.ts";
+import { MyConfig } from "../config/config.ts";
 
 export class Logger {
     private static _logger: Logger;
@@ -12,8 +13,8 @@ export class Logger {
         },
         loggers: {
           default: {
-            level: "DEBUG",
-            handlers: ["memory"],
+            level: MyConfig.instance().get("logger.default.level"),
+            handlers: [MyConfig.instance().get("logger.default.handler")],
           },
         },
       });

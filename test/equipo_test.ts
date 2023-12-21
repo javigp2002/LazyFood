@@ -1,9 +1,11 @@
-import { describe,it,beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
+import { describe,it,beforeAll, afterAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 import { assert, assertInstanceOf } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
 import { EquipoReal } from "../src/equipo_real.ts";
 import { Calendario } from "../src/calendario.ts";
+import { MyConfig } from "../config/config.ts";
+import { Logger } from "../logger/logger.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
     let equipoDistintaPuntuacion: Equipo;
@@ -25,6 +27,9 @@ describe("M1 - Jugador de venta óptimo", () => {
         ];
 
         equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresPruebaDatos, calendario);
+        
+        const logger = Logger.instance();
+        const level_logger = MyConfig.instance().get("logger.default.level");
     });
 
 
@@ -76,6 +81,13 @@ describe("M1 - Jugador de venta óptimo", () => {
             assert(indexJugadorOptimo.includes(equipoPrueba.getJugadores().indexOf(equipoPrueba.getJugadorOptimo(date))));
         });
 
+
+        it (`M1.- Comprobación de funcionamiento logger`,  () => {
+            Logger.instance().getLogger().debug("Comprobación del logger");
+            const logs = Logger.instance().getLogs();
+            const log = logs?.[logs.length - 1];
+            assert(log === "DEBUG Comprobación del logger");
+        });
     });
 });
 

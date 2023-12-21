@@ -1,7 +1,6 @@
 import { describe,it,beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 import { assert, assertInstanceOf } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { MyConfig } from "../config/config.ts";
-import { Logger } from "../logger/logger.ts";
 
 describe ("M2 - Configuración", () => {
 
