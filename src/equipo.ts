@@ -3,13 +3,14 @@ import { Calendario } from "./calendario.ts";
 import { Logger } from '../logger/logger.ts';
 
 export class Equipo {
+    logger = Logger.instance().getLogger();
+
     constructor(
         private nombre: string, 
         private jugadores: Jugador[],
         private calendario: Calendario)
     {
-        const logger = Logger.instance().getLogger();
-        logger.info("Creando equipo " + nombre);
+        this.logger.info("Creando equipo " + nombre);
     }
 
     getJugadores(): Jugador[] {
@@ -17,8 +18,7 @@ export class Equipo {
     }
 
     getJugadorOptimo(fecha: Date): Jugador {
-        const logger = Logger.instance().getLogger();
-        logger.debug("Calculando jugador optimo para el equipo " + this.nombre + " en la fecha " + fecha.toDateString());
+        this.logger.debug("Calculando jugador optimo para el equipo " + this.nombre + " en la fecha " + fecha.toDateString());
 
         let jugadorOptimo: Jugador = this.jugadores[0];
         let maximoValorHeuristica = Number.MIN_VALUE;
@@ -43,7 +43,7 @@ export class Equipo {
             }
         }
 
-        logger.debug("El jugador optimo es " + jugadorOptimo.getNombre() + " con una heuristica de " + maximoValorHeuristica);
+        this.logger.debug("El jugador optimo es " + jugadorOptimo.getNombre() + " con una heuristica de " + maximoValorHeuristica);
 
         return jugadorOptimo;
     }
