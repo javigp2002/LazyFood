@@ -3,7 +3,7 @@ import { EquipoReal } from "./equipo_real.ts";
 
 
 export class Jugador {
-    logger = Logger.instance().getLogger();
+    logger = Logger.instance().logger;
 
     constructor(
         private nombre: string, 

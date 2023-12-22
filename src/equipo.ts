@@ -3,7 +3,7 @@ import { Calendario } from "./calendario.ts";
 import { Logger } from '../logger/logger.ts';
 
 export class Equipo {
-    logger = Logger.instance().getLogger();
+    logger = Logger.instance().logger;
 
     constructor(
         private nombre: string, 

@@ -27,13 +27,14 @@ export class Logger {
         return Logger._logger;
     }
 
-    getLogger(){
+    get logger(){
       return log.getLogger();
     }
 
-    getLogs(){
+    get logs(){
       if (log.getLogger().handlers[0] instanceof MemoryHandler) {
         return (log.getLogger().handlers[0] as MemoryHandler).getLogs();
       }
+      return [];
     }
 }
