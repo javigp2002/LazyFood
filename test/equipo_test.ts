@@ -4,7 +4,6 @@ import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
 import { EquipoReal } from "../src/equipo_real.ts";
 import { Calendario } from "../src/calendario.ts";
-import { MyConfig } from "../config/config.ts";
 import { Logger } from "../logger/logger.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
@@ -20,6 +19,8 @@ describe("M1 - Jugador de venta óptimo", () => {
         [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
     ]));
 
+    const logger = Logger.instance()
+
     beforeAll(() => {
         const jugadoresPruebaDatos = [
             new Jugador("Callejon", [10, 10, 10, 10], [ 10000000, 10000000, 10000000, 10000000], granada),
@@ -28,9 +29,7 @@ describe("M1 - Jugador de venta óptimo", () => {
 
         equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresPruebaDatos, calendario);
         
-        const logger = Logger.instance();
-        const level_logger = MyConfig.instance().getLoggerLevel();
-    });
+   });
 
 
     it ("M1.1 - Es un jugador", () => {
@@ -82,12 +81,14 @@ describe("M1 - Jugador de venta óptimo", () => {
         });
 
 
-        it (`M1.- Comprobación de funcionamiento logger`,  () => {
-            Logger.instance().getLogger().debug("Comprobación del logger");
-            const logs = Logger.instance().getLogs();
-            const log = logs?.[logs.length - 1];
-            assert(log === "DEBUG Comprobación del logger");
-        });
+    });
+
+
+    it (`M1.- Comprobación de funcionamiento logger`,  () => {
+        logger.logger.debug("Comprobación del logger");
+        const logs = logger.logs;
+        const log = logs?.[logs.length - 1];
+        assert(log === "DEBUG Comprobación del logger");
     });
 });
 
