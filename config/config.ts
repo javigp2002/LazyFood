@@ -17,11 +17,11 @@ export class MyConfig {
     }
 
     getLoggerHandler(){
-        return this._config.get("logger.default.handler");
+        return this._config.get("logger.handler");
     }
 
     getLoggerLevel(){
-        return this._config.get("logger.default.level");
+        return this._config.get("logger.level");
     }
 
     
