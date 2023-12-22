@@ -9,7 +9,6 @@ export class Logger {
     private constructor() { 
       log.setup({
         handlers: {
-          console: new log.handlers.ConsoleHandler(config.get("logger.level")),
           memory: new MemoryHandler(config.get("logger.level")),
         },
         loggers: {
