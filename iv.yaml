@@ -10,4 +10,4 @@ CI:
   - .circleci/config.yml
 
 configuracion:
-  - config/config.ts
+  - logger/logger.ts
