@@ -1,0 +1,6 @@
+{
+    "logger": {
+      "handler": "memory",
+      "level": "DEBUG"
+    }
+  }

@@ -1,9 +1,10 @@
-import { describe,it,beforeAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
+import { describe,it,beforeAll, afterAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 import { assert, assertInstanceOf } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
 import { EquipoReal } from "../src/equipo_real.ts";
 import { Calendario } from "../src/calendario.ts";
+import { Logger } from "../logger/logger.ts";
 
 describe("M1 - Jugador de venta óptimo", () => {
     let equipoDistintaPuntuacion: Equipo;
@@ -18,6 +19,8 @@ describe("M1 - Jugador de venta óptimo", () => {
         [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
     ]));
 
+    const logger = Logger.instance()
+
     beforeAll(() => {
         const jugadoresPruebaDatos = [
             new Jugador("Callejon", [10, 10, 10, 10], [ 10000000, 10000000, 10000000, 10000000], granada),
@@ -25,7 +28,8 @@ describe("M1 - Jugador de venta óptimo", () => {
         ];
 
         equipoDistintaPuntuacion = new Equipo("equipoDistintaPuntuacion", jugadoresPruebaDatos, calendario);
-    });
+        
+   });
 
 
     it ("M1.1 - Es un jugador", () => {
@@ -76,6 +80,15 @@ describe("M1 - Jugador de venta óptimo", () => {
             assert(indexJugadorOptimo.includes(equipoPrueba.getJugadores().indexOf(equipoPrueba.getJugadorOptimo(date))));
         });
 
+
+    });
+
+
+    it (`M1.- Comprobación de funcionamiento logger`,  () => {
+        logger.logger.debug("Comprobación del logger");
+        const logs = logger.logs;
+        const log = logs?.[logs.length - 1];
+        assert(log === "DEBUG Comprobación del logger");
     });
 });
 
