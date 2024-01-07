@@ -11,3 +11,6 @@ CI:
 
 configuracion:
   - logger/logger.ts
+
+framework:
+  - oak
