@@ -1,7 +1,9 @@
 {
     "tasks": {
         "check": "deno check --all src/equipo.ts",
-        "test": "deno test --allow-read"
+        "test": "deno test --allow-read",
+        "build": "deno eval ''",
+        "install": "deno eval ''"
     },
 
     "imports":{
