@@ -1,3 +1,23 @@
+import { Calendario } from "../src/calendario.ts";
+
+    
+export interface IEquipo {
+    nombre: string;
+    jugadores: IJugador[];
+    calendario: Calendario;
+}
+
+interface IJugador {
+    nombre: string;
+    puntuacionPorJornada: number[];
+    valor_por_jornada: number[];
+    equipo_al_que_pertenece: IEquipoReal;
+}
+
+interface IEquipoReal {
+    nombre: string;
+    puesto: number;
+}
 
 const kv = await Deno.openKv();
 const nombreEquiposKv = "equipos";
