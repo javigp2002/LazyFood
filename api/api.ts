@@ -1,24 +1,41 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import { createBd, getOptimo, getJugadores, getJugador, postJugador, postEquipo, putJugador, putEquipo, deleteEquipo, deleteJugador } from "../model/bd.ts";
 
-const app = new Application();
+export const app = new Application();
 const router = new Router();
+await createBd();
 
 
 router
-    .get("/equipo/:nombreEquipo", (ctx) => {
-        ctx.response.body = {  };
+    .get("/equipo/:nombreEquipo", async (ctx) => {
+        const { nombreEquipo } = ctx.params;  
+        
+        const res = await getOptimo(nombreEquipo)
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })
 
-    .get("/equipo/:nombreEquipo/jugadores", (ctx) => {
+    .get("/equipo/:nombreEquipo/jugadores", async (ctx) => {
         const { nombreEquipo } = ctx.params;
 
-        ctx.response.body = {  }; 
+        const res = await getJugadores(nombreEquipo)
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })  
 
-    .get("/jugador/:nombreJugador", (ctx) => {
+    .get("/jugador/:nombreJugador", async(ctx) => {
         const { nombreJugador } = ctx.params;
 
-        ctx.response.body = {  }; 
+        const res = await getJugador(nombreJugador);
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
+
     })  
 
     .get("/equiporeal/:nombreEquipoReal", (ctx) => {
@@ -28,38 +45,75 @@ router
     })  
 
 
-    .post("/jugador/:nombreJugador", async (ctx) => {
+    .post("/jugador", async (ctx) => {
+        
         const body = await ctx.request.body().value;
-        ctx.response.body = {  };
+        
+        const res = await postJugador(body);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
+
     })
 
-    .post("/equipo/:nombreEquipo", async (ctx) => {
+    .post("/equipo", async (ctx) => {
         const body = await ctx.request.body().value;
-        ctx.response.body = {  };
+        
+        const res = await postEquipo(body);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })
 
     .put("/jugador/:nombreJugador", async (ctx) => {
         const { nombreJugador } = ctx.params;
         const body = await ctx.request.body().value;
-        ctx.response.body = {  };
+
+        const res = await putJugador(nombreJugador, body);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })
 
     .put("/equipo/:nombreEquipo", async (ctx) => {
         const { nombreEquipo } = ctx.params;
         const body = await ctx.request.body().value;
-        ctx.response.body = {  };
+        const res = await putEquipo(nombreEquipo, body);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })
 
-
-    .delete("/jugador/:nombreJugador", (ctx) => {
+    .delete("/jugador/:nombreJugador", async (ctx) => {
         const { nombreJugador } = ctx.params;
-        ctx.response.body = { };
+
+        const res = await deleteJugador(nombreJugador);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     })
 
-    .delete("/equipo/:nombreEquipo", (ctx) => {
+    .delete("/equipo/:nombreEquipo", async (ctx) => {
         const { nombreEquipo } = ctx.params;
-        ctx.response.body = { };
+        const res = await deleteEquipo(nombreEquipo);
+
+        ctx.response.headers.set("Content-Type", "application/json");
+        ctx.response.body = {
+            message: res,
+         };
     });
+
 
 app.use(router.routes());
 app.use(router.allowedMethods());
+app.listen({ port: 8000 });
