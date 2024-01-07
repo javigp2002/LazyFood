@@ -38,13 +38,6 @@ router
 
     })  
 
-    .get("/equiporeal/:nombreEquipoReal", (ctx) => {
-        const { nombreJugador } = ctx.params;
-
-        ctx.response.body = {  }; 
-    })  
-
-
     .post("/jugador", async (ctx) => {
         
         const body = await ctx.request.body().value;
