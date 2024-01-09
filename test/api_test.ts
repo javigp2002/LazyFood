@@ -2,9 +2,14 @@ import { describe,it,beforeAll, beforeEach, afterAll } from "https://deno.land/s
 import { assert, assertInstanceOf, assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { superoak } from "https://deno.land/x/superoak/mod.ts";
 import { app } from "../api/api.ts";
+import { MyDb, crearCalendario } from "../model/bd.ts";
 
-describe ("M4 - API", async () => {        
-
+describe ("M4 - API", async () => {   
+    let kv: Deno.Kv;     
+    beforeAll(async () => {  
+        kv = await createDbForTesting();
+    });
+    
     it ("M4.1.1 - Conexión Get", async () => {
         const testClient = await superoak(app);
 
@@ -13,22 +18,22 @@ describe ("M4 - API", async () => {
 
     it ("M4.1.2 - Testing Get (Jugador Óptimo)", async () => {
         const testClient = await superoak(app);
-        const nombreEquipo:JSON = (await testClient.get("/equipo/equipo1")).body;
-        
-        assert(JSON.stringify(nombreEquipo).includes("Gavi"));
+        const res:JSON = (await testClient.get("/equipo/equipo1")).body;
+
+        assert(JSON.stringify(res).includes("Gavi"));
     });
 
     it ("M4.2 - Testing Get (Jugadores)", async () => {
         const testClient = await superoak(app);
         const nombreEquipo:JSON = (await testClient.get("/equipo/equipo1/jugadores")).body;
-        
+
         assert(JSON.stringify(nombreEquipo).includes("equipo1"));
     });
 
     it ("M4.3 - Testing Get (Nombre Jugador)", async () => {
         const testClient = await superoak(app);
         const nombreEquipo:JSON = (await testClient.get("/jugador/Gavi")).body;
-        
+
         assert(JSON.stringify(nombreEquipo).includes("Gavi"));
     });
 
@@ -39,9 +44,8 @@ describe ("M4 - API", async () => {
             .set("Content-Type", "application/json")
             .send('{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
             .expect(200));
-    
-        
     });
+
 
     it ("M4.5- Testing Post (Equipo)", async () => {
         const testClient = await superoak(app);
@@ -78,4 +82,78 @@ describe ("M4 - API", async () => {
         assert (await testClient.delete("/equipo/equipoPrueba")
             .expect(200));
     });
+
+    afterAll(async () => {
+        await kv.close();
+    });
 });
+
+async function createDbForTesting() {
+    const kv = await Deno.openKv();
+
+    const key = ["equipos", "equipo1"];
+    const value = {
+        "jugadores": [
+            {
+                "nombre": "Callejon",
+                "puntuacionPorJornada": [10,10,10,10],
+                "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            },
+            {
+                "nombre": "Uzuni",
+                "puntuacionPorJornada": [5,5,5,5],
+                "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            },
+            {
+                "nombre": "Gavi",
+                "puntuacionPorJornada": [1,1,1,1],
+                "valor_por_jornada": [40000000,40000000,40000000,40000000],
+                "equipo_al_que_pertenece": {
+                    "nombre": "barcelona",
+                    "puesto": 3
+                }
+            }
+        ]    
+    };
+    
+    await kv.set(key, value);
+
+    const key2 = ["equipos", "equipo2"]
+    const value2 = {
+        "jugadores": [
+            {
+                "nombre": "Neva",
+                "puntuacionPorJornada": [10,10,10,10],
+                "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            },
+            {
+                "nombre": "Carlos",
+                "puntuacionPorJornada": [5,5,5,5],
+                "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                "equipo_al_que_pertenece": {
+                    "nombre": "granada",
+                    "puesto": 20
+                }
+            }
+
+        ]    
+    };
+
+    await kv.set(key2, value2);
+ 
+    await kv.set(["jugadores", "Gavi"], {"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]});
+
+    return kv;
+}
