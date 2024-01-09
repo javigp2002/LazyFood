@@ -39,7 +39,7 @@ describe ("M3 - Bd", async () => {
     });
 
     it ("M3.4.1 - Crear Jugador, creado", async () => {
-        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
+        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Neva", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
         assert(!jugador.ok);
 
 
