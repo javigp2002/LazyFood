@@ -39,7 +39,7 @@ describe ("M3 - Bd", async () => {
     });
 
     it ("M3.4.1 - Crear Jugador, creado", async () => {
-        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Neva", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
+        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Pedri", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
         assert(!jugador.ok);
 
 
@@ -59,7 +59,7 @@ describe ("M3 - Bd", async () => {
     });
 
     it ("M3.6 - Modificar jugador", async () => {
-        const jugador = (await db.putJugador("Carlos", JSON.parse('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')));
+        const jugador = (await db.putJugador("Pedri", JSON.parse('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')));
         assert(jugador.ok);
     });
 
@@ -141,7 +141,7 @@ async function createbdForTesting(): Promise<Deno.Kv>{
 
     await kv.set(key2, value2);
  
-    await kv.set(["jugadores", "Gavi"], {"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]});
+    await kv.set(["jugadores", "Pedri"], {"nombre": "Pedri", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}});
 
     return kv;
 }
