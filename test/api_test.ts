@@ -66,7 +66,7 @@ describe ("M4 - API", async () => {
 
     it ("M4.6- Testing PUT (Jugador)", async () => {
         const testClient = await superoak(app);
-        assert (await testClient.put("/jugador/Uzuki")
+        assert (await testClient.put("/jugador/Gavi")
             .set("Content-Type", "application/json")
             .send('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')
             .expect(200));
@@ -74,7 +74,7 @@ describe ("M4 - API", async () => {
 
     it ("M4.7- Testing PUT (Equipo)", async () => {
         const testClient = await superoak(app);
-        assert (await testClient.put("/equipo/equipoPrueba")
+        assert (await testClient.put("/equipo/equipo2")
             .set("Content-Type", "application/json")
             .send('{"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')
             .expect(200));
