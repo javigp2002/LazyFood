@@ -42,12 +42,12 @@ describe ("M5 - Lógica de negocio API", async () => {
     });
 
     it ("M5.2 - Testing Get (Jugador Óptimo)", async () => {
-        mockito.when(mockedMyDb.getJugador("Rivaldo")).thenResolve("Ronaldinho");
+        mockito.when(mockedMyDb.getJugador("Rivaldo")).thenResolve("Rivaldo");
 
         createUnderTest();
         const result = await underTest.getJugador("Rivaldo");
 
-        assertEquals(result, "Ronaldinho");
+        assertEquals(result, "Rivaldo");
     });
 
     it ("M5.3 - Testing Get (Jugador Óptimo vacio)", async () => {
