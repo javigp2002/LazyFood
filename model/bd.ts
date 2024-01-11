@@ -92,23 +92,23 @@ export class MyDb{
 
     }
 
-     async postJugador(body: any){
-        if (await this.existeJugador(body.nombre)){
+     async createJugador(data: any){
+        if (await this.existeJugador(data.nombre)){
             return {ok: false};
         }
 
-        return await this.kv.set([nombreJugadoresKv, body.nombre], body);
+        return await this.kv.set([nombreJugadoresKv, data.nombre], data);
     }
 
-     async postEquipo(body: any){
-        if (await this.existeEquipo(body.nombre)){
+     async createEquipo(data: any){
+        if (await this.existeEquipo(data.nombre)){
             return {ok: false};
         }
 
-        return await this.kv.set([nombreEquiposKv, body.nombre], body);
+        return await this.kv.set([nombreEquiposKv, data.nombre], data);
     }
 
-     async putJugador(nombreJugador:string, body: any){
+     async updateJugador(nombreJugador:string, data: any){
         if (! await this.existeJugador(nombreJugador)){
             return {ok: false};
         }
@@ -118,19 +118,19 @@ export class MyDb{
 
 
         const jugador = res.value as IJugador;
-        for (const key in body) {
+        for (const key in data) {
             switch (key) {
                 case "nombre":
-                    jugador.nombre = body.nombre;
+                    jugador.nombre = data.nombre;
                     break;
                 case "puntuacionPorJornada":
-                    jugador.puntuacionPorJornada = body.puntuacionPorJornada;
+                    jugador.puntuacionPorJornada = data.puntuacionPorJornada;
                     break;
                 case "valor_por_jornada":
-                    jugador.valor_por_jornada = body.valor_por_jornada;
+                    jugador.valor_por_jornada = data.valor_por_jornada;
                     break;
                 case "equipo_al_que_pertenece":
-                    jugador.equipo_al_que_pertenece = body.equipo_al_que_pertenece;
+                    jugador.equipo_al_que_pertenece = data.equipo_al_que_pertenece;
                     break;
                 default:
                     break;
@@ -143,7 +143,7 @@ export class MyDb{
         return result;
     }
 
-     async putEquipo(nombreEquipo:string, body: any){
+     async updateEquipo(nombreEquipo:string, body: any){
         if (! await this.existeEquipo(nombreEquipo)){
             return {ok: false};
         }

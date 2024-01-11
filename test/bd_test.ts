@@ -32,39 +32,39 @@ describe ("M3 - Bd", async () => {
     });
 
     it ("M3.4 - Crear Jugador", async () => {
-        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Moradona", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
+        const jugador = (await db.createJugador(JSON.parse('{"nombre": "Moradona", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
         await db.deleteJugador("Moradona");
         assert(jugador.ok);
 
     });
 
     it ("M3.4.1 - Crear Jugador, creado", async () => {
-        const jugador = (await db.postJugador(JSON.parse('{"nombre": "Pedri", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
+        const jugador = (await db.createJugador(JSON.parse('{"nombre": "Pedri", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')));
         assert(!jugador.ok);
 
 
     });
 
     it ("M3.5 - Crear Equipo", async () => {
-        const equipos = (await db.postEquipo(JSON.parse('{"nombre": "galacticos", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
+        const equipos = (await db.createEquipo(JSON.parse('{"nombre": "galacticos", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
         await db.deleteEquipo("galacticos");
         assert(equipos.ok);
 
     });
 
     it ("M3.5.1 - Crear Equipo, Creado...", async () => {
-        const equipos = (await db.postEquipo(JSON.parse('{"nombre": "equipo1", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
+        const equipos = (await db.createEquipo(JSON.parse('{"nombre": "equipo1", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
 
         assert(!equipos.ok);
     });
 
     it ("M3.6 - Modificar jugador", async () => {
-        const jugador = (await db.putJugador("Pedri", JSON.parse('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')));
+        const jugador = (await db.updateJugador("Pedri", JSON.parse('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')));
         assert(jugador.ok);
     });
 
     it ("M3.7 - Modificar Equipo", async () => {
-        const equipo = (await db.putEquipo("equipo1", JSON.parse('{"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
+        const equipo = (await db.updateEquipo("equipo1", JSON.parse('{"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')));
         assert(equipo.ok);
     });
 

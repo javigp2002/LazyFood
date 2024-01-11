@@ -24,17 +24,17 @@ export class ApiController {
     }
 
     async postJugador(body: any) {
-        const res = await this.db.postJugador(body);
+        const res = await this.db.createJugador(body);
         return res;
     }
 
     async postEquipo(body: any) {
-        const res = await this.db.postEquipo(body);
+        const res = await this.db.createEquipo(body);
         return res;
     }
 
     async putJugador(nombreJugador: string, body: any) {
-        const res = await this.db.putJugador(nombreJugador, body);
+        const res = await this.db.updateJugador(nombreJugador, body);
         return res;
     }
 
@@ -42,7 +42,7 @@ export class ApiController {
         if (await this.db.existeEquipo(nombreEquipo) == false) {
             return { ok: false, error: "El equipo no existe" };
         }
-        const res = await this.db.putEquipo(nombreEquipo, body);
+        const res = await this.db.updateEquipo(nombreEquipo, body);
         return res;
     }
 }
