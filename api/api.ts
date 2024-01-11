@@ -41,20 +41,24 @@ router
     .post("/jugador", async (ctx) => {
         
         const body = await ctx.request.body().value;
-                
+        const resultado = await apiController.postJugador(body);
+
+        ctx.response.status = resultado.status;
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
-            message: await apiController.postJugador(body),
+            message: resultado,
          };
 
     })
 
     .post("/equipo", async (ctx) => {
         const body = await ctx.request.body().value;
-        
+
+        const response = await apiController.postEquipo(body);
+        ctx.response.status = response.status;
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
-            message: await apiController.postEquipo(body),
+            message: response,
          };
     })
 
@@ -62,9 +66,12 @@ router
         const { nombreJugador } = ctx.params;
         const body = await ctx.request.body().value;
 
+        const response = await apiController.putJugador(nombreJugador, body);
+
+        ctx.response.status = response.status;
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
-            message: apiController.putJugador(nombreJugador, body),
+            message: response,
          };
     })
 
@@ -72,9 +79,12 @@ router
         const { nombreEquipo } = ctx.params;
         const body = await ctx.request.body().value;
 
+        const response = await apiController.putEquipo(nombreEquipo, body)
+
+        ctx.response.status = response.status;
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
-            message: apiController.putEquipo(nombreEquipo, body),
+            message: response,
          };
     })
 
