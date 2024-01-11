@@ -2,7 +2,6 @@ import { describe,it,beforeAll, beforeEach, afterAll } from "https://deno.land/s
 import { assert, assertInstanceOf, assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { superoak } from "https://deno.land/x/superoak/mod.ts";
 import { app } from "../src/api.ts";
-import { MyDb, crearCalendario } from "../model/bd.ts";
 
 describe ("M4 - API", async () => {   
     let kv: Deno.Kv;     

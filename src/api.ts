@@ -1,11 +1,12 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-import { MyDb, crearCalendario } from "../model/bd.ts";
+import { MyDb } from "../model/bd.ts";
 import { ApiController } from "./api_controller.ts";
+import { createCalendario } from "../test/bd_test.ts";
 
 export const app = new Application();
 const router = new Router();
 const realDb = await Deno.openKv()
-const calendar = crearCalendario();
+const calendar = createCalendario();
 
 const apiController = new ApiController(new MyDb(realDb, calendar));
 

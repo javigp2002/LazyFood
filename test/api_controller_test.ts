@@ -2,7 +2,7 @@ import { describe,it,beforeAll, beforeEach, afterAll } from "https://deno.land/s
 import { assert, assertInstanceOf, assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { app } from "../src/api.ts";
 import { ApiController } from "../src/api_controller.ts";
-import { MyDb, crearCalendario } from "../model/bd.ts";
+import { MyDb } from "../model/bd.ts";
 import  mockito  from "npm:ts-mockito";
 import { Jugador } from "../src/jugador.ts";
 

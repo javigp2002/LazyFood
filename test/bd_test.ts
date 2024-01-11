@@ -1,8 +1,8 @@
 import { describe,it,beforeAll, afterAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 import { assert, assertInstanceOf, assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
-import { MyDb, crearCalendario, IEquipo } from "../model/bd.ts";
-import { isErrorStatus } from "https://deno.land/std@0.200.0/http/http_status.ts";
-import { assertIsError } from "https://deno.land/std@0.205.0/assert/assert_is_error.ts";
+import { MyDb } from "../model/bd.ts";
+import { EquipoReal } from "../src/equipo_real.ts";
+import { Calendario } from "../src/calendario.ts";
 
 
 describe ("M3 - Bd", async () => {
@@ -11,7 +11,7 @@ describe ("M3 - Bd", async () => {
 
     beforeAll(async () => {
         const kv = await createDbForTestingFromJson("./test/datos_test_bd.json");
-        db = new MyDb(kv, crearCalendario());
+        db = new MyDb(kv, createCalendario());
     });
 
 
@@ -20,7 +20,7 @@ describe ("M3 - Bd", async () => {
     });
 
     it ("M3.2 - Coger óptimo", async () => {
-        const result = await db.getOptimo("equipo1");
+        const result = await db.getOptimo("equipo1", new Date("2021-01-01"));
 
         assertEquals(result.getNombre(), "Gavi");
     });
@@ -85,4 +85,17 @@ async function createDbForTestingFromJson(json:string): Promise<Deno.Kv>{
     await Promise.all(promises);
     
     return kv;
+}
+
+export function createCalendario(){
+    const date: Date = new Date("2021-01-01");
+    const barcelona = new EquipoReal("Barcelona", 3);
+    const realMadrid = new EquipoReal("Real Madrid", 2);
+    const granada = new EquipoReal("Granada", 19);
+    const mallorca = new EquipoReal("Mallorca", 14);
+    const calendario: Calendario = new Calendario(new Map([
+        [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
+    ]));
+
+    return calendario;
 }

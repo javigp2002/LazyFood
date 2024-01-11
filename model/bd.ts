@@ -2,7 +2,6 @@ import { Calendario } from "../src/calendario.ts";
 import { EquipoReal } from "../src/equipo_real.ts";
 import { Jugador } from "../src/jugador.ts";
 import { Equipo } from "../src/equipo.ts";
-import { type } from "https://jspm.dev/npm:superagent@6.1.0/lib/utils!cjs";
     
 export interface IEquipo {
     nombre: string;
@@ -24,19 +23,6 @@ interface IEquipoReal {
 
 const nombreEquiposKv = "equipos";
 const nombreJugadoresKv = "jugadores";
-const date: Date = new Date("2021-01-01");
-const barcelona = new EquipoReal("Barcelona", 3);
-const realMadrid = new EquipoReal("Real Madrid", 2);
-const granada = new EquipoReal("Granada", 19);
-const mallorca = new EquipoReal("Mallorca", 14);
-
-export function crearCalendario(){
-    const calendario: Calendario = new Calendario(new Map([
-        [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
-    ]));
-
-    return calendario;
-}
 
 
 export class MyDb{
@@ -60,7 +46,7 @@ export class MyDb{
     }
     
 
-    async getOptimo(equipo: string): Promise<Jugador> {
+    async getOptimo(equipo: string, date?:Date): Promise<Jugador> {
         const res = await this.kv.get([nombreEquiposKv, equipo]);
         const iTeam: IEquipo = res.value as IEquipo;
         const jugadores: Jugador[] = []
@@ -71,6 +57,7 @@ export class MyDb{
 
         const team = new Equipo(iTeam.nombre, jugadores, this.calendario);
 
+        if (date == undefined) date = new Date();
         return team.getJugadorOptimo(date);
 
     }
