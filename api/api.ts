@@ -78,25 +78,6 @@ router
          };
     })
 
-    .delete("/jugador/:nombreJugador", async (ctx) => {
-        const { nombreJugador } = ctx.params;
-
-        ctx.response.headers.set("Content-Type", "application/json");
-        ctx.response.body = {
-            message: apiController.deleteJugador(nombreJugador),
-         };
-    })
-
-    .delete("/equipo/:nombreEquipo", async (ctx) => {
-        const { nombreEquipo } = ctx.params;
-
-        ctx.response.headers.set("Content-Type", "application/json");
-        ctx.response.body = {
-            message: apiController.deleteEquipo(nombreEquipo),
-         };
-    });
-
-
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen({ port: 8000 });

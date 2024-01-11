@@ -45,14 +45,4 @@ export class ApiController {
         const res = await this.db.putEquipo(nombreEquipo, body);
         return res;
     }
-
-    async deleteEquipo(nombreEquipo: string) {
-        const res = await this.db.deleteEquipo(nombreEquipo);
-        return res;
-    }
-
-    async deleteJugador(nombreJugador: string) {
-        const res = await this.db.deleteJugador(nombreJugador);
-        return res;
-    }
 }

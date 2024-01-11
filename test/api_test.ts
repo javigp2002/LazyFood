@@ -71,18 +71,6 @@ describe ("M4 - API", async () => {
             .expect(200));
     });
 
-    it ("M4.8- Testing DELETE (Jugador)", async () => {
-        const testClient = await superoak(app);
-        assert (await testClient.delete("/jugador/Uzuki")
-            .expect(200));
-    });
-
-    it ("M4.9- Testing DELETE (Equipo)", async () => {
-        const testClient = await superoak(app);
-        assert (await testClient.delete("/equipo/equipoPrueba")
-            .expect(200));
-    });
-
     afterAll(async () => {
         await kv.close();
     });
