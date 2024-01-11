@@ -1,7 +1,7 @@
 import { describe,it,beforeAll, beforeEach, afterAll } from "https://deno.land/std@0.204.0/testing/bdd.ts";
 import { assert, assertInstanceOf, assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
 import { superoak } from "https://deno.land/x/superoak/mod.ts";
-import { app } from "../api/api.ts";
+import { app } from "../src/api.ts";
 import { MyDb, crearCalendario } from "../model/bd.ts";
 
 describe ("M4 - API", async () => {   
