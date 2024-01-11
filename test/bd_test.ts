@@ -10,7 +10,7 @@ describe ("M3 - Bd", async () => {
     
 
     beforeAll(async () => {
-        const kv = await createbdForTesting();
+        const kv = await createDbForTestingFromJson("./test/datos_test_bd.json");
         db = new MyDb(kv, crearCalendario());
     });
 
@@ -143,5 +143,17 @@ async function createbdForTesting(): Promise<Deno.Kv>{
  
     await kv.set(["jugadores", "Pedri"], {"nombre": "Pedri", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}});
 
+    return kv;
+}
+
+async function createDbForTestingFromJson(json:string): Promise<Deno.Kv>{
+    const kv = await Deno.openKv();
+
+    const promises = JSON.parse(Deno.readTextFileSync(json)).map(async (datos: any) => {
+        await kv.set(datos.key, datos.value);
+    });
+
+    await Promise.all(promises);
+    
     return kv;
 }

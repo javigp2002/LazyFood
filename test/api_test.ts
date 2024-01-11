@@ -7,9 +7,9 @@ import { MyDb, crearCalendario } from "../model/bd.ts";
 describe ("M4 - API", async () => {   
     let kv: Deno.Kv;     
     beforeAll(async () => {  
-        kv = await createDbForTesting();
+        kv = await createDbForTestingFromJson("./test/datos_test_api.json");
     });
-    
+
     it ("M4.1.1 - Conexión Get", async () => {
         const testClient = await superoak(app);
 
@@ -88,72 +88,14 @@ describe ("M4 - API", async () => {
     });
 });
 
-async function createDbForTesting() {
+async function createDbForTestingFromJson(json:string): Promise<Deno.Kv>{
     const kv = await Deno.openKv();
 
-    const key = ["equipos", "equipo1"];
-    const value = {
-        "jugadores": [
-            {
-                "nombre": "Callejon",
-                "puntuacionPorJornada": [10,10,10,10],
-                "valor_por_jornada": [10000000,10000000,10000000,10000000],
-                "equipo_al_que_pertenece": {
-                    "nombre": "granada",
-                    "puesto": 20
-                }
-            },
-            {
-                "nombre": "Uzuni",
-                "puntuacionPorJornada": [5,5,5,5],
-                "valor_por_jornada": [10000000,10000000,10000000,10000000],
-                "equipo_al_que_pertenece": {
-                    "nombre": "granada",
-                    "puesto": 20
-                }
-            },
-            {
-                "nombre": "Gavi",
-                "puntuacionPorJornada": [1,1,1,1],
-                "valor_por_jornada": [40000000,40000000,40000000,40000000],
-                "equipo_al_que_pertenece": {
-                    "nombre": "barcelona",
-                    "puesto": 3
-                }
-            }
-        ]    
-    };
+    const promises = JSON.parse(Deno.readTextFileSync(json)).map(async (datos: any) => {
+        await kv.set(datos.key, datos.value);
+    });
+
+    await Promise.all(promises);
     
-    await kv.set(key, value);
-
-    const key2 = ["equipos", "equipo2"]
-    const value2 = {
-        "jugadores": [
-            {
-                "nombre": "Neva",
-                "puntuacionPorJornada": [10,10,10,10],
-                "valor_por_jornada": [10000000,10000000,10000000,10000000],
-                "equipo_al_que_pertenece": {
-                    "nombre": "granada",
-                    "puesto": 20
-                }
-            },
-            {
-                "nombre": "Carlos",
-                "puntuacionPorJornada": [5,5,5,5],
-                "valor_por_jornada": [10000000,10000000,10000000,10000000],
-                "equipo_al_que_pertenece": {
-                    "nombre": "granada",
-                    "puesto": 20
-                }
-            }
-
-        ]    
-    };
-
-    await kv.set(key2, value2);
- 
-    await kv.set(["jugadores", "Gavi"], {"jugadores": [{"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]});
-
     return kv;
 }

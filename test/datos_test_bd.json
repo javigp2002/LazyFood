@@ -1,0 +1,79 @@
+[
+    {
+        "key": ["equipos", "equipo1"],
+        "value": {
+            "jugadores": [
+                {
+                    "nombre": "Callejon",
+                    "puntuacionPorJornada": [10,10,10,10],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "granada",
+                        "puesto": 20
+                    }
+                },
+                {
+                    "nombre": "Uzuni",
+                    "puntuacionPorJornada": [5,5,5,5],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "granada",
+                        "puesto": 20
+                    }
+                },
+                {
+                    "nombre": "Gavi",
+                    "puntuacionPorJornada": [1,1,1,1],
+                    "valor_por_jornada": [40000000,40000000,40000000,40000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "barcelona",
+                        "puesto": 3
+                    }
+                }
+            ]    
+        }
+    },
+
+    {
+        "key": ["equipos", "equipo2"],
+        "value": {
+            "jugadores": [
+                {
+                    "nombre": "Neva",
+                    "puntuacionPorJornada": [10,10,10,10],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "granada",
+                        "puesto": 20
+                    }
+                },
+                {
+                    "nombre": "Carlos",
+                    "puntuacionPorJornada": [5,5,5,5],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "granada",
+                        "puesto": 20
+                    }
+                }
+
+            ]
+        }
+    },
+    {
+        "key": ["jugadores", "Pedri"],
+        "value": {
+            "jugadores": [
+                {
+                    "nombre": "Pedri", 
+                    "puntuacionPorJornada": [5,5,5,5],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "granada",
+                        "puesto": 20
+                    }
+                }
+            ]
+        }
+    }
+]
