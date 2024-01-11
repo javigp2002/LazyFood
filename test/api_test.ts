@@ -42,8 +42,17 @@ describe ("M4 - API", async () => {
         const testClient = await superoak(app);
         assert (await testClient.post("/jugador")
             .set("Content-Type", "application/json")
-            .send('{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
+            .send('{"nombre": "Pablo", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
             .expect(200));
+
+    });
+
+    it ("M4.4.2- Testing Post, existente (Jugador)", async () => {
+        const testClient = await superoak(app);
+        assert (await testClient.post("/jugador")
+            .set("Content-Type", "application/json")
+            .send('{"nombre": "Gavi", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
+            .expect(400));
     });
 
 
@@ -51,7 +60,7 @@ describe ("M4 - API", async () => {
         const testClient = await superoak(app);
         assert (await testClient.post("/equipo")
             .set("Content-Type", "application/json")
-            .send('{"nombre": "equipoPrueba", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')
+            .send('{"nombre": "EquipoFalso", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')
             .expect(200));
     });
 
@@ -72,6 +81,8 @@ describe ("M4 - API", async () => {
     });
 
     afterAll(async () => {
+        await kv.delete(["equipos", "EquipoFalso"]);
+        await kv.delete(["jugadores", "Pablo"]);
         await kv.close();
     });
 });

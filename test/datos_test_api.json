@@ -74,6 +74,20 @@
                     }
                 }
             ]
+        },
+        "key": ["jugadores", "Antuan"],
+        "value": {
+            "jugadores": [
+                {
+                    "nombre": "Antuan", 
+                    "puntuacionPorJornada": [5,5,5,5],
+                    "valor_por_jornada": [10000000,10000000,10000000,10000000],
+                    "equipo_al_que_pertenece": {
+                        "nombre": "barcelona",
+                        "puesto": 20
+                    }
+                }
+            ]
         }
     }
 ]
