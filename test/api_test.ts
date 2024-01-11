@@ -66,7 +66,7 @@ describe ("M4 - API", async () => {
 
     it ("M4.6- Testing PUT (Jugador)", async () => {
         const testClient = await superoak(app);
-        assert (await testClient.put("/jugador/Gavi")
+        assert (await testClient.put("/jugador/Antuan")
             .set("Content-Type", "application/json")
             .send('{"valor_por_jornada": [20000000,20000000,10000000,10000000]}')
             .expect(200));
