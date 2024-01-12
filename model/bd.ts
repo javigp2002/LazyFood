@@ -57,8 +57,7 @@ export class MyDb{
 
         const team = new Equipo(iTeam.nombre, jugadores, this.calendario);
 
-        if (date == undefined) date = new Date();
-        return team.getJugadorOptimo(date);
+        return team.getJugadorOptimo();
 
     }
 

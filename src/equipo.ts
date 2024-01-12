@@ -17,8 +17,8 @@ export class Equipo {
         return this.jugadores;
     }
 
-    getJugadorOptimo(fecha: Date): Jugador {
-        this.logger.debug("Calculando jugador optimo para el equipo " + this.nombre + " en la fecha " + fecha.toDateString());
+    getJugadorOptimo(): Jugador {
+        this.logger.debug("Calculando jugador optimo para el equipo " + this.nombre);
 
         let jugadorOptimo: Jugador = this.jugadores[0];
         let maximoValorHeuristica = Number.MIN_VALUE;
@@ -31,7 +31,7 @@ export class Equipo {
             const jugadorActual = this.jugadores[i];
             let heuristicaActual = jugadorActual.getHeuristica();
 
-            if (this.calendario.getSiguienteEnfrentamientoEquipo(fecha, jugadorActual.getEquipoAlQuePertenece()).getPuesto() > 
+            if (this.calendario.getSiguienteEnfrentamientoEquipo(jugadorActual.getEquipoAlQuePertenece()).getPuesto() > 
             jugadorActual.getEquipoAlQuePertenece().getPuesto())
                 diferencia_dificultad_equipo = valor_diferencia_equipo_negativa
 
