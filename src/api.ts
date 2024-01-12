@@ -42,12 +42,12 @@ router
     .post("/jugador", async (ctx) => {
         
         const body = await ctx.request.body().value;
-        const resultado = await apiController.postJugador(body);
+        const response = await apiController.postJugador(body);
 
-        ctx.response.status = resultado.status;
+        ctx.response.status = response;
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
-            message: resultado,
+            message: response,
          };
 
     })
@@ -56,7 +56,7 @@ router
         const body = await ctx.request.body().value;
 
         const response = await apiController.postEquipo(body);
-        ctx.response.status = response.status;
+        ctx.response.status = response
         ctx.response.headers.set("Content-Type", "application/json");
         ctx.response.body = {
             message: response,

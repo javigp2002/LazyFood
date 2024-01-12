@@ -24,19 +24,14 @@ export class ApiController {
     }
 
     async postJugador(body: any) {
-        const info_player = await this.db.createJugador(body);
-
-        const res = JSON.parse(JSON.stringify(info_player));
-        res["status"] = info_player.ok ? 200 : 400;
+        const is_created = await this.db.createJugador(body);
+        return is_created ? 200 : 400;
         
-        return res;
     }
 
     async postEquipo(body: any) {
-        const info_team = await this.db.createEquipo(body);
-        const res = JSON.parse(JSON.stringify(info_team));
-        res["status"] = info_team.ok ? 200 : 400;
-        return res;
+        const is_created = await this.db.createEquipo(body);
+        return is_created ? 200 : 400;
     }
 
     async putJugador(nombreJugador: string, body: any) {

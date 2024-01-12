@@ -79,20 +79,21 @@ export class MyDb{
 
     }
 
-     async createJugador(data: any){
+     async createJugador(data: any): Promise<boolean>{
         if (await this.existeJugador(data.nombre)){
-            return {ok: false};
+            return false;
         }
 
-        return await this.kv.set([nombreJugadoresKv, data.nombre], data);
+        this.kv.set([nombreJugadoresKv, data.nombre], data);
+        return true;
     }
 
-     async createEquipo(data: any){
+     async createEquipo(data: any): Promise<boolean>{
         if (await this.existeEquipo(data.nombre)){
-            return {ok: false};
+            return false;
         }
-
-        return await this.kv.set([nombreEquiposKv, data.nombre], data);
+        await this.kv.set([nombreEquiposKv, data.nombre], data);
+        return true;
     }
 
      async updateJugador(nombreJugador:string, data: any){
