@@ -14,10 +14,12 @@ export class Calendario{
         return this.jornadas;
     }
 
-    public getSiguienteEnfrentamientoEquipo(fecha: Date, equipoReal: EquipoReal): EquipoReal{
+    public getSiguienteEnfrentamientoEquipo(equipoReal: EquipoReal): EquipoReal{
         let siguienteEnfrentamientoEquipoReal: EquipoReal = new EquipoReal("NULL", 21);
+        const fecha = new Date();
+
         for (const [key,value] of this.jornadas.entries()){
-            if (key == fecha){
+            if (fecha <= key ){
                 for (let i=0; i<value.length; i++){
                     if (value[i].equipo1 == equipoReal){
                         siguienteEnfrentamientoEquipoReal = value[i].equipo2
