@@ -9,18 +9,18 @@ export class ApiController {
     }
 
     async getOptimo(nombreEquipo: string): Promise<Jugador|null> {
-        const res = await this.db.getOptimo(nombreEquipo);
-        return res;
+        return await this.db.getOptimo(nombreEquipo);
+        
     }
 
     async getJugadores(nombreEquipo: string) {
-        const res = await this.db.getJugadores(nombreEquipo);
-        return res;
+        return await this.db.getJugadores(nombreEquipo);
+
     }
 
     async getJugador(nombreJugador: string): Promise<string> {
-        const res = await this.db.getJugador(nombreJugador);
-        return res;
+        return await this.db.getJugador(nombreJugador);
+        
     }
 
     async postJugador(body: any) {
