@@ -42,7 +42,7 @@ describe ("M4 - API", async () => {
         assert (await testClient.post("/jugador")
             .set("Content-Type", "application/json")
             .send('{"nombre": "Pablo", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
-            .expect(200));
+            .expect(201));
 
     });
 
@@ -51,7 +51,7 @@ describe ("M4 - API", async () => {
         assert (await testClient.post("/jugador")
             .set("Content-Type", "application/json")
             .send('{"nombre": "Antuan", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}')
-            .expect(400));
+            .expect(200));
     });
 
 
@@ -60,7 +60,7 @@ describe ("M4 - API", async () => {
         assert (await testClient.post("/equipo")
             .set("Content-Type", "application/json")
             .send('{"nombre": "EquipoFalso", "jugadores": [{"nombre": "Uzuki", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}, {"nombre": "Carlos", "puntuacionPorJornada": [5,5,5,5],"valor_por_jornada": [10000000,10000000,10000000,10000000],"equipo_al_que_pertenece": {"nombre": "granada","puesto": 20}}]}')
-            .expect(200));
+            .expect(201));
     });
 
     it ("M4.6- Testing PUT (Jugador)", async () => {

@@ -25,13 +25,13 @@ export class ApiController {
 
     async postJugador(body: any) {
         const is_created = await this.db.createJugador(body);
-        return is_created ? 200 : 400;
+        return is_created ? 201 : 200;
         
     }
 
     async postEquipo(body: any) {
         const is_created = await this.db.createEquipo(body);
-        return is_created ? 200 : 400;
+        return is_created ? 201 : 200;
     }
 
     async putJugador(nombreJugador: string, body: any) {
