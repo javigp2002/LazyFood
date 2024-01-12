@@ -14,7 +14,7 @@ describe("M1 - Jugador de venta óptimo", () => {
     const granada = new EquipoReal("Granada", 19);
     const mallorca = new EquipoReal("Mallorca", 14);
 
-    const date: Date = new Date("2021-01-01");;
+    const date: Date = new Date("2090-01-01");;
     const calendario: Calendario = new Calendario(new Map([
         [date, [{equipo1: barcelona, equipo2: realMadrid}, {equipo1: granada, equipo2: mallorca}]],
     ]));
@@ -33,27 +33,27 @@ describe("M1 - Jugador de venta óptimo", () => {
 
 
     it ("M1.1 - Es un jugador", () => {
-        assertInstanceOf(equipoDistintaPuntuacion.getJugadorOptimo(date), Jugador);
+        assertInstanceOf(equipoDistintaPuntuacion.getJugadorOptimo(), Jugador);
     });
 
     it ("M1.2 - Es un jugador del equipo", () => {
-        const jugador = equipoDistintaPuntuacion.getJugadorOptimo(date);
+        const jugador = equipoDistintaPuntuacion.getJugadorOptimo();
         assert(equipoDistintaPuntuacion.getJugadores().includes(jugador));
     });
 
     it ("M1.3 - La puntuación del jugador devuelve un integer", () => {
-        const jugador = equipoDistintaPuntuacion.getJugadorOptimo(date);
+        const jugador = equipoDistintaPuntuacion.getJugadorOptimo();
         assert(Number.isInteger(jugador.getPuntuacionPorJornada()[0]));
     });
 
     it ("M1.4 - Valor de mercado del jugador es integer", () => {
-        const jugador = equipoDistintaPuntuacion.getJugadorOptimo(date);
+        const jugador = equipoDistintaPuntuacion.getJugadorOptimo();
         assert(Number.isInteger(jugador.getValorPorJornada()[0]));
     });
 
     it ("M1.5 - La función no tarda más de 1 segundo", () => {
         const start = performance.now();
-        equipoDistintaPuntuacion.getJugadorOptimo(date);
+        equipoDistintaPuntuacion.getJugadorOptimo();
         const end = performance.now();
         assert(end - start < 1000);
     });
@@ -77,7 +77,7 @@ describe("M1 - Jugador de venta óptimo", () => {
 
 
         it (`M1.- Es un jugador óptimo en: ${equipoPruebaData.titulo}`,  () => {
-            assert(indexJugadorOptimo.includes(equipoPrueba.getJugadores().indexOf(equipoPrueba.getJugadorOptimo(date))));
+            assert(indexJugadorOptimo.includes(equipoPrueba.getJugadores().indexOf(equipoPrueba.getJugadorOptimo())));
         });
 
 

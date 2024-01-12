@@ -85,7 +85,7 @@ async function createDbForTestingFromJson(json:string): Promise<Deno.Kv>{
 }
 
 export function createCalendario(){
-    const date: Date = new Date("2021-01-01");
+    const date: Date = new Date("2089-01-01");
     const barcelona = new EquipoReal("Barcelona", 3);
     const realMadrid = new EquipoReal("Real Madrid", 2);
     const granada = new EquipoReal("Granada", 19);
